@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Precipitations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Month</th>
+      <th>Precip</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @precipitations.each do |precipitation| %>
+      <tr>
+        <td><%= precipitation.location_id %></td>
+        <td><%= precipitation.month %></td>
+        <td><%= precipitation.precip %></td>
+        <td><%= precipitation.min %></td>
+        <td><%= precipitation.max %></td>
+        <td><%= link_to 'Show', precipitation %></td>
+        <td><%= link_to 'Edit', edit_precipitation_path(precipitation) %></td>
+        <td><%= link_to 'Destroy', precipitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Precipitation', new_precipitation_path %>

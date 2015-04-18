@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @precipitation.location_id %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @precipitation.month %>
+</p>
+
+<p>
+  <strong>Precip:</strong>
+  <%= @precipitation.precip %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @precipitation.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @precipitation.max %>
+</p>
+
+<%= link_to 'Edit', edit_precipitation_path(@precipitation) %> |
+<%= link_to 'Back', precipitations_path %>

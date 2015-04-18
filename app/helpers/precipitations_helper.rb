@@ -1,0 +1,2 @@
+module PrecipitationsHelper
+end

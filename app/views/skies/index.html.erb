@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Skies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Month</th>
+      <th>Sky</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skies.each do |sky| %>
+      <tr>
+        <td><%= sky.location_id %></td>
+        <td><%= sky.month %></td>
+        <td><%= sky.sky %></td>
+        <td><%= sky.min %></td>
+        <td><%= sky.max %></td>
+        <td><%= link_to 'Show', sky %></td>
+        <td><%= link_to 'Edit', edit_sky_path(sky) %></td>
+        <td><%= link_to 'Destroy', sky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sky', new_sky_path %>

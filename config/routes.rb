@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :precipitations
+
+  resources :skies
+
+  resources :temperatures
+
+  resources :locations
+
   get 'sessions/new'
 
   get 'signup' => 'users#new'

@@ -1,0 +1,37 @@
+<%= form_for(@precipitation) do |f| %>
+  <% if @precipitation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@precipitation.errors.count, "error") %> prohibited this precipitation from being saved:</h2>
+
+      <ul>
+      <% @precipitation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location_id %><br>
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.text_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :precip %><br>
+    <%= f.text_field :precip %>
+  </div>
+  <div class="field">
+    <%= f.label :min %><br>
+    <%= f.number_field :min %>
+  </div>
+  <div class="field">
+    <%= f.label :max %><br>
+    <%= f.number_field :max %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

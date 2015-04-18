@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @sky.location_id %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @sky.month %>
+</p>
+
+<p>
+  <strong>Sky:</strong>
+  <%= @sky.sky %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @sky.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @sky.max %>
+</p>
+
+<%= link_to 'Edit', edit_sky_path(@sky) %> |
+<%= link_to 'Back', skies_path %>
