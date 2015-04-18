@@ -1,0 +1,75 @@
+<%= form_for(@stadium) do |f| %>
+  <% if @stadium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stadium.errors.count, "error") %> prohibited this stadium from being saved:</h2>
+
+      <ul>
+      <% @stadium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="col-md-4">
+  <div class="field  col-md-4">
+    <% @location = Location.order("location") %>
+    <%= f.label :location_id %><br>
+    <%= f.select :location_id, options_from_collection_for_select(@location, 'id', 'location', @stadium.location_id) %>
+  </div>
+  <div class="field col-md-4">
+    <%= f.label :team_id %><br>
+    <%= f.number_field :team_id %>
+  </div>
+  <div class="field col-md-4">
+    <%= f.label :stadium %><br>
+    <%= f.text_field :stadium %>
+  </div>
+  </div>
+  <div class="col-md-8">
+  <div class="field col-md-1">
+    <%= f.label :lfl %><br>
+    <%= f.number_field :lfl %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :lf %><br>
+    <%= f.number_field :lf %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :lc %><br>
+    <%= f.number_field :lc %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :cf %><br>
+    <%= f.number_field :cf %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :rc %><br>
+    <%= f.number_field :rc %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :rf %><br>
+    <%= f.number_field :rf %>
+  </div>
+  <div class="field col-md-1">
+    <%= f.label :rfl %><br>
+    <%= f.number_field :rfl %>
+  </div>
+</div>
+
+<div class="sky col-md-12"><h3>Wind Conditions</h3>
+
+  <%= f.fields_for :winds do |wind| %>
+    <div class="conditions_table col-md-4 <%= wind.object.month %> wind"> 
+        <%= wind.hidden_field :month %>
+        <%= wind.text_field :wind, readonly: true %>
+        <div class="conditions_table col-md-6">min:<%= wind.text_field :min %></div>
+        <div class="conditions_table col-md-6">max:<%= wind.text_field :max %></div>
+    </div>
+  <% end %>
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

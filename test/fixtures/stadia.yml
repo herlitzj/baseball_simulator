@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location_id: 1
+  team_id: 1
+  stadium: MyString
+  lfl: 1
+  lf: 1
+  lc: 1
+  cf: 1
+  rc: 1
+  rf: 1
+  rfl: 1
+
+two:
+  location_id: 1
+  team_id: 1
+  stadium: MyString
+  lfl: 1
+  lf: 1
+  lc: 1
+  cf: 1
+  rc: 1
+  rf: 1
+  rfl: 1

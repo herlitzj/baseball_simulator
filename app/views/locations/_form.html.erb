@@ -19,10 +19,10 @@
 <div class="temperature col-md-12"><h3>Temperature Conditions</h3>
 
   <%= f.fields_for :temperatures do |temp| %>
-      <div class="conditions_table col-md-1 <%= temp.object.month %> temp">
+      <div class="conditions_table col-md-3 <%= temp.object.month %> temp">
         <%= temp.hidden_field :month %>
-        <%= temp.text_field :time %>
-        <%= temp.text_field :temp %>
+        <%= temp.text_field :time, readonly: true %>
+        <%= temp.text_field :temp, readonly: true %>
         <div class="conditions_table col-md-6">min:<%= temp.text_field :min %></div>
         <div class="conditions_table col-md-6">max:<%= temp.text_field :max %></div>
       </div>
@@ -32,9 +32,9 @@
 <div class="sky col-md-12"><h3>Sky Conditions</h3>
 
   <%= f.fields_for :skies do |sky| %>
-    <div class="conditions_table col-md-1 <%= sky.object.month %> sky"> 
+    <div class="conditions_table col-md-3 <%= sky.object.month %> sky"> 
         <%= sky.hidden_field :month %>
-        <%= sky.text_field :sky %>
+        <%= sky.text_field :sky, readonly: true %>
         <div class="conditions_table col-md-6">min:<%= sky.text_field :min %></div>
         <div class="conditions_table col-md-6">max:<%= sky.text_field :max %></div>
     </div>
@@ -44,9 +44,9 @@
 <div class="precipitation col-md-12"><h3>Precipitation Conditions</h3>
 
   <%= f.fields_for :precipitations do |precip| %>
-    <div class="conditions_table col-md-1 <%= precip.object.month %> precip"> 
+    <div class="conditions_table col-md-2 <%= precip.object.month %> precip"> 
         <%= precip.hidden_field :month %>
-        <%= precip.text_field :precip %>
+        <%= precip.text_field :precip, readonly: true %>
         <div class="conditions_table col-md-6">min:<%= precip.text_field :min %></div>
         <div class="conditions_table col-md-6">max:<%= precip.text_field :max %></div>
     </div>

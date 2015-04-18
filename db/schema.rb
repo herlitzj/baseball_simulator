@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418104722) do
+ActiveRecord::Schema.define(version: 20150418221832) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "location"
@@ -39,6 +39,31 @@ ActiveRecord::Schema.define(version: 20150418104722) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "stadia", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "team_id"
+    t.string   "stadium"
+    t.integer  "lfl"
+    t.integer  "lf"
+    t.integer  "lc"
+    t.integer  "cf"
+    t.integer  "rc"
+    t.integer  "rf"
+    t.integer  "rfl"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer  "stadium_id"
+    t.string   "city"
+    t.string   "name"
+    t.string   "league"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "league_sub"
+  end
+
   create_table "temperatures", force: :cascade do |t|
     t.integer  "location_id"
     t.string   "month"
@@ -61,5 +86,15 @@ ActiveRecord::Schema.define(version: 20150418104722) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "winds", force: :cascade do |t|
+    t.integer  "stadium_id"
+    t.string   "month"
+    t.string   "wind"
+    t.integer  "min"
+    t.integer  "max"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

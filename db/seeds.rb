@@ -118,7 +118,7 @@ Temperature.create!(location_id: 1,
 					min: 53,
 					max: 99
 					)
-=end
+
 
 # PRECIPITATION SEEDS #
 Precipitation.create!(location_id: 1,
@@ -155,3 +155,71 @@ Precipitation.create!(location_id: 1,
 					min: 55,
 					max: 99
 					)
+
+
+
+# STADIUM SEEDS #
+Stadium.create!(location_id: 1,
+				team_id: 3,
+				stadium: "Fenway Park",
+				lfl: 37,
+				lf: 37,
+				lc: 37,
+				cf: 17,
+				rc: 5,
+				rf: 5,
+				rfl: 3
+				)
+
+Stadium.create!(location_id: 1,
+				team_id: 4,
+				stadium: "Wrigley Field",
+				lfl: 15,
+				lf: 12,
+				lc: 12,
+				cf: 12,
+				rc: 12,
+				rf: 12,
+				rfl: 15
+				)
+
+
+# WIND SEEDS #
+Wind.create!(stadium_id: 1,
+			month: "April",
+			wind: "cross",
+			min: 0,
+			max: 26
+			)
+
+Wind.create!(stadium_id: 1,
+			month: "April",
+			wind: "none",
+			min: 27,
+			max: 85
+			)
+
+Wind.create!(stadium_id: 1,
+			month: "April",
+			wind: "straight",
+			min: 86,
+			max: 99
+			)
+
+=end
+
+# TEAM SEEDS #
+
+Team.create!(stadium_id: 0,
+			city: "Boston",
+			name: "Red Sox",
+			league: "American",
+			league_sub: "east"
+			)
+
+Team.create!(stadium_id: 0,
+			city: "Chicago",
+			name: "Cubs",
+			league: "National",
+			league_sub: "west"
+			)

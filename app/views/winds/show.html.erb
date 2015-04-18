@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stadium:</strong>
+  <%= @wind.stadium_id %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @wind.month %>
+</p>
+
+<p>
+  <strong>Wind:</strong>
+  <%= @wind.wind %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @wind.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @wind.max %>
+</p>
+
+<%= link_to 'Edit', edit_wind_path(@wind) %> |
+<%= link_to 'Back', winds_path %>

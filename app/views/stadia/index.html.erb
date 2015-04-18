@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stadia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Team</th>
+      <th>Stadium</th>
+      <th>Lfl</th>
+      <th>Lf</th>
+      <th>Lc</th>
+      <th>Cf</th>
+      <th>Rc</th>
+      <th>Rf</th>
+      <th>Rfl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stadia.each do |stadium| %>
+      <tr>
+        <td><%= stadium.location_id %></td>
+        <td><%= stadium.team_id %></td>
+        <td><%= stadium.stadium %></td>
+        <td><%= stadium.lfl %></td>
+        <td><%= stadium.lf %></td>
+        <td><%= stadium.lc %></td>
+        <td><%= stadium.cf %></td>
+        <td><%= stadium.rc %></td>
+        <td><%= stadium.rf %></td>
+        <td><%= stadium.rfl %></td>
+        <td><%= link_to 'Show', stadium %></td>
+        <td><%= link_to 'Edit', edit_stadium_path(stadium) %></td>
+        <td><%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stadium', new_stadium_path %>
