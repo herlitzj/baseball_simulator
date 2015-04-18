@@ -15,10 +15,20 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+
+    # Generate new table rows for each month and sky condition
+    @month = ["April", "May", "June", "July", "August", "September", "October"]
+    @sky = ["Clear", "Partly Cloudy", "Cloudy"]
+    @month.each { |month| @sky.each { |sky| @location.skies.build month: month, sky: sky }}
+
   end
 
   # GET /locations/1/edit
   def edit
+    # Generate new table rows for each month and sky condition
+    @month = ["April", "May", "June", "July", "August", "September", "October"]
+    @sky = ["Clear", "Partly Cloudy", "Cloudy"]
+    @month.each { |month| @sky.each { |sky| @location.skies.build month: month, sky: sky }}
   end
 
   # POST /locations
@@ -69,6 +79,10 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:location)
+      params.require(:location).permit(:location,
+        temperatures_attributes: [:location_id, :month, :time, :temp, :min, :max],
+        skies_attributes: [:location_id, :month, :sky, :min, :max],
+        precipitation_attributes: [:location_id, :month, :precip, :min, :max]
+        )
     end
 end

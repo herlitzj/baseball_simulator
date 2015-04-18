@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
+  <% @location = Location.order("location") %>
     <%= f.label :location_id %><br>
-    <%= f.number_field :location_id %>
+    <%= f.select :location_id, options_from_collection_for_select(@location, 'id', 'location', @sky.location_id) %>
   </div>
   <div class="field">
     <%= f.label :month %><br>
-    <%= f.text_field :month %>
+    <%= f.select :month, options_for_select(%w[May June July August September October], @sky.month) %>
   </div>
   <div class="field">
     <%= f.label :sky %><br>
-    <%= f.text_field :sky %>
+    <%= f.select :sky, options_for_select(['Clear', 'Partly Cloudy', 'Cloudy'], @sky.sky) %>
   </div>
   <div class="field">
     <%= f.label :min %><br>

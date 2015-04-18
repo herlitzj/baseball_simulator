@@ -15,6 +15,37 @@
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
+
+
+<h3>Sky Conditions</h3>
+
+  <%= f.fields_for :skies do |sky| %>
+    <div class="col-md-2"> 
+      <div class="col-md-12">
+        <%= sky.text_field :month %>
+        <%= sky.text_field :sky %>
+        <div class="col-md-6"><%= sky.text_field :min %></div>
+        <div class="col-md-6"><%= sky.text_field :max %></div>
+      </div>
+    </div>
+  <% end %>
+
+<!--
+  <div class="sky col-md-4"> 
+    <div class="col-md-12"> May </div>
+    <%= f.fields_for :skies do |sky| %>
+      <div class="col-md-4"> 
+        <% if sky.object.month == "May" %>
+          <%= sky.text_field :month %>
+          <%= sky.text_field :sky %>
+          <div class="col-md-6"><%= sky.text_field :min %></div>
+          <div class="col-md-6"><%= sky.text_field :max %></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+-->
+
   <div class="actions">
     <%= f.submit %>
   </div>

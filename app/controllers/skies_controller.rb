@@ -14,7 +14,7 @@ class SkiesController < ApplicationController
 
   # GET /skies/new
   def new
-    @sky = Sky.new
+    @sky = Sky.new month: "June", sky: "Clear", min: 0, max: 10
   end
 
   # GET /skies/1/edit
