@@ -1,6 +1,12 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
+  @@month = ["April", "May", "June", "July", "August", "September", "October"]
+  @@sky = ["Clear", "Partly Cloudy", "Cloudy"]
+  @@precip = ["Thunderstorms", "Showers", "Snow", "Fog", "None"]
+  @@time = ["Day", "Night"]
+  @@temp = ["Hot", "Warm", "Cool", "Cold"]
+
   # GET /locations
   # GET /locations.json
   def index
@@ -16,19 +22,15 @@ class LocationsController < ApplicationController
   def new
     @location = Location.new
 
-    # Generate new table rows for each month and sky condition
-    @month = ["April", "May", "June", "July", "August", "September", "October"]
-    @sky = ["Clear", "Partly Cloudy", "Cloudy"]
-    @month.each { |month| @sky.each { |sky| @location.skies.build month: month, sky: sky }}
+    # Generate new table rows for each month and condition
+    @@month.each { |month| @@time.each { |time| @@temp.each { |temp| @location.temperatures.build month: month, time: time, temp: temp }}}
+    @@month.each { |month| @@sky.each { |sky| @location.skies.build month: month, sky: sky }}
+    @@month.each { |month| @@precip.each { |precip| @location.precipitations.build month: month, precip: precip }}
 
   end
 
   # GET /locations/1/edit
   def edit
-    # Generate new table rows for each month and sky condition
-    @month = ["April", "May", "June", "July", "August", "September", "October"]
-    @sky = ["Clear", "Partly Cloudy", "Cloudy"]
-    @month.each { |month| @sky.each { |sky| @location.skies.build month: month, sky: sky }}
   end
 
   # POST /locations
