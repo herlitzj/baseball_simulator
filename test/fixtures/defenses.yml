@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  position: MyString
+  error: 1
+  rnge: MyString
+  throw: 1
+  passedball: MyString
+  pickoff: 1
+  hold: MyString
+  wp: MyString
+  balk: MyString
+  bfsp: 1
+  bfrp: 1
+  rest0: 1
+  rest1: 1
+  rest2: 1
+  rest3: 1
+
+two:
+  player_id: 1
+  position: MyString
+  error: 1
+  rnge: MyString
+  throw: 1
+  passedball: MyString
+  pickoff: 1
+  hold: MyString
+  wp: MyString
+  balk: MyString
+  bfsp: 1
+  bfrp: 1
+  rest0: 1
+  rest1: 1
+  rest2: 1
+  rest3: 1

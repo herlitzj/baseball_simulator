@@ -1,0 +1,97 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="col-md-12">
+  <div class="col-md-13">
+  <% @team = Team.order("name") %>
+    <%= f.label :team_id %><br>
+    <%= f.select :team_id, options_from_collection_for_select(@team, 'id', 'name', @player.team_id) %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :hand %><br>
+    <%= f.select :hand, options_for_select(%w[r l], @player.hand) %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :player_type %><br>
+    <%= f.select :player_type, options_for_select(%w[batter pitcher], @player.player_type) %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :durability %><br>
+    <%= f.number_field :durability %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :dldays %><br>
+    <%= f.number_field :dldays %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :run %><br>
+    <%= f.number_field :run %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :steal %><br>
+    <%= f.number_field :steal %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :jump %><br>
+    <%= f.number_field :jump %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :bat %><br>
+    <%= f.text_field :bat %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :bunt %><br>
+    <%= f.text_field :bunt %>
+  </div>
+  <div class="col-md-13">
+    <%= f.label :wild %><br>
+    <%= f.text_field :wild %>
+  </div>
+
+
+<div class="stats col-md-4"><h3>Player Stats</h3>
+
+  <%= f.fields_for :plays do |play| %> 
+    <% if play.object.vs_hand == "l" %>
+      <div class="float_left col-md-6"> 
+        <div class="conditions_table plays_left"><%= play.hidden_field :vs_hand %></div>
+        <div class="conditions_table plays_left"><%= play.hidden_field :play %></div>
+        <div class="conditions_table plays_left col-md-2"><%= play.text_field :field %></div>
+        <div class="conditions_table plays_left col-md-2"><%= play.text_field :max %></div>
+        <div class="conditions_table plays_left col-md-2"><%= play.text_field :min %></div>
+      </div>
+      <% else %>
+      <div class="float_right col-md-6"> 
+        <div class="conditions_table plays_right col-md-3"><%= play.text_field :play, readonly: true %></div>
+        <div class="conditions_table plays_right col-md-2"><%= play.text_field :field %></div>
+        <div class="conditions_table plays_right col-md-2"><%= play.text_field :min %></div>
+        <div class="conditions_table plays_right col-md-2"><%= play.text_field :max %></div>
+        <div class="conditions_table plays_right"><%= play.hidden_field :vs_hand %></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+  <div class="actions col-md-4">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

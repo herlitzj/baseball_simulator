@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team_id: 1
+  first_name: MyString
+  last_name: MyString
+  hand: MyString
+  player_type: MyString
+  durability: 1
+  dldays: 1
+  run: 1
+  steal: 1
+  jump: 1
+  bat: MyString
+  bunt: MyString
+  wild: MyString
+
+two:
+  team_id: 1
+  first_name: MyString
+  last_name: MyString
+  hand: MyString
+  player_type: MyString
+  durability: 1
+  dldays: 1
+  run: 1
+  steal: 1
+  jump: 1
+  bat: MyString
+  bunt: MyString
+  wild: MyString

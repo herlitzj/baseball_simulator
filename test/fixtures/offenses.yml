@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  vs_hand: MyString
+  ifr: MyString
+  ofr: MyString
+  df: MyString
+  power: MyString
+
+two:
+  player_id: 1
+  vs_hand: MyString
+  ifr: MyString
+  ofr: MyString
+  df: MyString
+  power: MyString

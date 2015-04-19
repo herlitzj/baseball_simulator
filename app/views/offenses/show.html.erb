@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @offense.player_id %>
+</p>
+
+<p>
+  <strong>Vs hand:</strong>
+  <%= @offense.vs_hand %>
+</p>
+
+<p>
+  <strong>Ifr:</strong>
+  <%= @offense.ifr %>
+</p>
+
+<p>
+  <strong>Ofr:</strong>
+  <%= @offense.ofr %>
+</p>
+
+<p>
+  <strong>Df:</strong>
+  <%= @offense.df %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @offense.power %>
+</p>
+
+<%= link_to 'Edit', edit_offense_path(@offense) %> |
+<%= link_to 'Back', offenses_path %>

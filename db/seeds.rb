@@ -206,7 +206,7 @@ Wind.create!(stadium_id: 1,
 			max: 99
 			)
 
-=end
+
 
 # TEAM SEEDS #
 
@@ -223,3 +223,149 @@ Team.create!(stadium_id: 0,
 			league: "National",
 			league_sub: "west"
 			)
+
+=end
+
+# PLAYER SEEDS #
+Player.create!(team_id: 0,
+				first_name: "Freddie",
+				last_name: "Freeman",
+				hand: "right",
+				player_type: "batter",
+				durability: 7,
+				dldays: 15,
+				run: 1,
+				steal: 1,
+				jump: 0,
+				bunt: "Fr_-1",
+			)
+
+Player.create!(team_id: 0,
+				first_name: "Alex",
+				last_name: "Wilson",
+				hand: "right",
+				player_type: "pitcher",
+				durability: 3,
+				dldays: 83,
+				bunt: "Fr_-1",
+				bat: "Rsp#1_Pr",
+			)
+
+# PLAYS SEEDS #
+
+Play.create!(player_id: 1,
+			vs_hand: "r",
+			min: 0,
+			max: 10,
+			play: "wild",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "l",
+			min: 0,
+			max: 10,
+			play: "wild",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "r",
+			min: 11,
+			max: 67,
+			play: "error",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "l",
+			min: 11,
+			max: 67,
+			play: "error",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "r",
+			min: 68,
+			max: 82,
+			play: "l",
+			field: "3b",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "l",
+			min: 68,
+			max: 82,
+			play: "l",
+			field: "ss",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "r",
+			min: 83,
+			max: 97,
+			play: "park",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "l",
+			min: 83,
+			max: 97,
+			play: "park",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "r",
+			min: 98,
+			max: 117,
+			play: "1b",
+			field: "inf",
+			fatigue: 0 
+			)
+
+Play.create!(player_id: 1,
+			vs_hand: "l",
+			min: 98,
+			max: 114,
+			play: "1b",
+			field: "inf",
+			fatigue: 0 
+			)
+
+# DEFENSE SEEDS #
+
+Defense.create!(player_id: 1,
+				position: "1b",
+				error: 7,
+				rnge: "d"
+				)
+
+Defense.create!(player_id: 2,
+				error: 3,
+				rnge: "h",
+				pickoff: 0,
+				hold: "Vg_0",
+				wp: "normal",
+				balk: "Rare",
+				bfsp: 0,
+				bfrp: 11,
+				rest0: 6,
+				rest1: 8,
+				rest2: 14,
+				rest3: 16
+				)
+
+# OFFENSE SEEDS #
+
+Offense.create!(player_id: 0,
+				vs_hand: "l",
+				ifr: "sp",
+				ofr: "sp",
+				df: "sp",
+				power: "sp"
+				)

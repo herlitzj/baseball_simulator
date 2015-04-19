@@ -1,0 +1,45 @@
+<%= form_for(@play) do |f| %>
+  <% if @play.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@play.errors.count, "error") %> prohibited this play from being saved:</h2>
+
+      <ul>
+      <% @play.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :vs_hand %><br>
+    <%= f.text_field :vs_hand %>
+  </div>
+  <div class="field">
+    <%= f.label :min %><br>
+    <%= f.number_field :min %>
+  </div>
+  <div class="field">
+    <%= f.label :max %><br>
+    <%= f.number_field :max %>
+  </div>
+  <div class="field">
+    <%= f.label :play %><br>
+    <%= f.text_field :play %>
+  </div>
+  <div class="field">
+    <%= f.label :field %><br>
+    <%= f.text_field :field %>
+  </div>
+  <div class="field">
+    <%= f.label :fatigue %><br>
+    <%= f.number_field :fatigue %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

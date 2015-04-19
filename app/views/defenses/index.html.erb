@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Defenses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Position</th>
+      <th>Error</th>
+      <th>Rnge</th>
+      <th>Throw</th>
+      <th>Passedball</th>
+      <th>Pickoff</th>
+      <th>Hold</th>
+      <th>Wp</th>
+      <th>Balk</th>
+      <th>Bfsp</th>
+      <th>Bfrp</th>
+      <th>Rest0</th>
+      <th>Rest1</th>
+      <th>Rest2</th>
+      <th>Rest3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @defenses.each do |defense| %>
+      <tr>
+        <td><%= defense.player_id %></td>
+        <td><%= defense.position %></td>
+        <td><%= defense.error %></td>
+        <td><%= defense.rnge %></td>
+        <td><%= defense.throw %></td>
+        <td><%= defense.passedball %></td>
+        <td><%= defense.pickoff %></td>
+        <td><%= defense.hold %></td>
+        <td><%= defense.wp %></td>
+        <td><%= defense.balk %></td>
+        <td><%= defense.bfsp %></td>
+        <td><%= defense.bfrp %></td>
+        <td><%= defense.rest0 %></td>
+        <td><%= defense.rest1 %></td>
+        <td><%= defense.rest2 %></td>
+        <td><%= defense.rest3 %></td>
+        <td><%= link_to 'Show', defense %></td>
+        <td><%= link_to 'Edit', edit_defense_path(defense) %></td>
+        <td><%= link_to 'Destroy', defense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Defense', new_defense_path %>

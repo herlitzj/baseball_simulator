@@ -1,0 +1,81 @@
+<%= form_for(@defense) do |f| %>
+  <% if @defense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@defense.errors.count, "error") %> prohibited this defense from being saved:</h2>
+
+      <ul>
+      <% @defense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :error %><br>
+    <%= f.number_field :error %>
+  </div>
+  <div class="field">
+    <%= f.label :rnge %><br>
+    <%= f.text_field :rnge %>
+  </div>
+  <div class="field">
+    <%= f.label :throw %><br>
+    <%= f.number_field :throw %>
+  </div>
+  <div class="field">
+    <%= f.label :passedball %><br>
+    <%= f.text_field :passedball %>
+  </div>
+  <div class="field">
+    <%= f.label :pickoff %><br>
+    <%= f.number_field :pickoff %>
+  </div>
+  <div class="field">
+    <%= f.label :hold %><br>
+    <%= f.text_field :hold %>
+  </div>
+  <div class="field">
+    <%= f.label :wp %><br>
+    <%= f.text_field :wp %>
+  </div>
+  <div class="field">
+    <%= f.label :balk %><br>
+    <%= f.text_field :balk %>
+  </div>
+  <div class="field">
+    <%= f.label :bfsp %><br>
+    <%= f.number_field :bfsp %>
+  </div>
+  <div class="field">
+    <%= f.label :bfrp %><br>
+    <%= f.number_field :bfrp %>
+  </div>
+  <div class="field">
+    <%= f.label :rest0 %><br>
+    <%= f.number_field :rest0 %>
+  </div>
+  <div class="field">
+    <%= f.label :rest1 %><br>
+    <%= f.number_field :rest1 %>
+  </div>
+  <div class="field">
+    <%= f.label :rest2 %><br>
+    <%= f.number_field :rest2 %>
+  </div>
+  <div class="field">
+    <%= f.label :rest3 %><br>
+    <%= f.number_field :rest3 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

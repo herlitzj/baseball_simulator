@@ -192,6 +192,37 @@ input {
   padding-left: 0px;
 }
 
+.float_right {
+  float: right;
+  padding-left: 1px;
+
+  .plays_right {
+    float: left;
+
+    input {
+      text-align: center;
+    }
+  }
+}
+
+.float_left {
+  float: left;
+  padding-right: 1px;
+
+  .plays_left {
+    float: right;
+
+    input {
+      text-align: center;
+    }
+  }
+}
+
+.col-md-13 {
+  width: 7.692307692%;
+  margin: 0px !important;
+}
+
 /* users index */
 
 .users {

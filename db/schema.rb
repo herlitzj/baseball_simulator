@@ -11,10 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418221832) do
+ActiveRecord::Schema.define(version: 20150419002715) do
+
+  create_table "defenses", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "position"
+    t.integer  "error"
+    t.string   "rnge"
+    t.integer  "throw"
+    t.string   "passedball"
+    t.integer  "pickoff"
+    t.string   "hold"
+    t.string   "wp"
+    t.string   "balk"
+    t.integer  "bfsp"
+    t.integer  "bfrp"
+    t.integer  "rest0"
+    t.integer  "rest1"
+    t.integer  "rest2"
+    t.integer  "rest3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offenses", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "vs_hand"
+    t.string   "ifr"
+    t.string   "ofr"
+    t.string   "df"
+    t.string   "power"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "hand"
+    t.string   "player_type"
+    t.integer  "durability"
+    t.integer  "dldays"
+    t.integer  "run"
+    t.integer  "steal"
+    t.integer  "jump"
+    t.string   "bat"
+    t.string   "bunt"
+    t.string   "wild"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "plays", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "vs_hand"
+    t.integer  "min"
+    t.integer  "max"
+    t.string   "play"
+    t.string   "field"
+    t.integer  "fatigue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

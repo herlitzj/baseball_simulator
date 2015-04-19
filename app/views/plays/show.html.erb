@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @play.player_id %>
+</p>
+
+<p>
+  <strong>Vs hand:</strong>
+  <%= @play.vs_hand %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @play.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @play.max %>
+</p>
+
+<p>
+  <strong>Play:</strong>
+  <%= @play.play %>
+</p>
+
+<p>
+  <strong>Field:</strong>
+  <%= @play.field %>
+</p>
+
+<p>
+  <strong>Fatigue:</strong>
+  <%= @play.fatigue %>
+</p>
+
+<%= link_to 'Edit', edit_play_path(@play) %> |
+<%= link_to 'Back', plays_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@offense) do |f| %>
+  <% if @offense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@offense.errors.count, "error") %> prohibited this offense from being saved:</h2>
+
+      <ul>
+      <% @offense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="field">
+    <%= f.label :vs_hand %><br>
+    <%= f.text_field :vs_hand %>
+  </div>
+  <div class="field">
+    <%= f.label :ifr %><br>
+    <%= f.text_field :ifr %>
+  </div>
+  <div class="field">
+    <%= f.label :ofr %><br>
+    <%= f.text_field :ofr %>
+  </div>
+  <div class="field">
+    <%= f.label :df %><br>
+    <%= f.text_field :df %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br>
+    <%= f.text_field :power %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
