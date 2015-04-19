@@ -11,47 +11,49 @@
     </div>
   <% end %>
 
-<div class="col-md-4">
-  <div class="field  col-md-4">
+<div class="col-md-5"><h4>Stadium Info</h4>
+  <div class="field  col-md-5">
     <% @location = Location.order("location") %>
     <%= f.label :location_id %><br>
     <%= f.select :location_id, options_from_collection_for_select(@location, 'id', 'location', @stadium.location_id) %>
   </div>
-  <div class="field col-md-4">
+  <div class="field col-md-3">
+    <% @team = Team.order("name") %>
     <%= f.label :team_id %><br>
-    <%= f.number_field :team_id %>
+    <%= f.select :team_id, options_from_collection_for_select(@team, 'id', 'name', @stadium.team_id) %>
   </div>
   <div class="field col-md-4">
     <%= f.label :stadium %><br>
     <%= f.text_field :stadium %>
   </div>
   </div>
-  <div class="col-md-8">
-  <div class="field col-md-1">
+
+  <div class="col-md-7"><h4>Fence Height</h4>
+  <div class="stadium_stats field col-md-1">
     <%= f.label :lfl %><br>
     <%= f.number_field :lfl %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :lf %><br>
     <%= f.number_field :lf %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :lc %><br>
     <%= f.number_field :lc %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :cf %><br>
     <%= f.number_field :cf %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :rc %><br>
     <%= f.number_field :rc %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :rf %><br>
     <%= f.number_field :rf %>
   </div>
-  <div class="field col-md-1">
+  <div class="stadium_stats field col-md-1">
     <%= f.label :rfl %><br>
     <%= f.number_field :rfl %>
   </div>

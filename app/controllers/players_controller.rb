@@ -1,6 +1,9 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
+  @@plays = ["wild", "error", "l", "park", "1b", "1b", "3b", "hg-", "hg", "hg", "2b", "1b", "1b", "rg", "hf", "hr", "hb", "bb", "so", "3b", "2b", "2b", "rg+", "hf", "p"]
+
+
   # GET /players
   # GET /players.json
   def index
@@ -15,6 +18,9 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+
+    @@plays.each { |play| @player.plays.build play: play, vs_hand: "l" }
+    @@plays.each { |play| @player.plays.build play: play, vs_hand: "r" }
   end
 
   # GET /players/1/edit

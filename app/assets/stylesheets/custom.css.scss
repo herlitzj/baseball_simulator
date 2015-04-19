@@ -23,6 +23,7 @@ html {
 
 body {
   padding-top: 50px;
+  padding-bottom: 30px;
 
 }
 
@@ -148,6 +149,8 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 input {
@@ -183,45 +186,79 @@ input {
   margin-left: 0;
 }
 
-.conditions_table {
+.conditions_table, .stats_table, .stadium_stats {
   padding-right: 2px;
   padding-left: 2px;
+  
+  input {
+  margin-bottom: 2px;
+  }
+}
+
+.conditions_table {
+  margin-bottom: 7px;
 }
 
 .month_wrapper {
   padding-left: 0px;
+  margin-bottom: 10px;
 }
 
-.float_right {
-  float: right;
-  padding-left: 1px;
+.stats {
+  float: left !important;
 
-  .plays_right {
-    float: left;
-
-    input {
-      text-align: center;
-    }
-  }
-}
-
-.float_left {
-  float: left;
-  padding-right: 1px;
-
-  .plays_left {
+  .stats_right {
     float: right;
+    padding-left: 1px;
 
-    input {
-      text-align: center;
+    .plays_right {
+      float: left;
+      width: 20%;
+
+      input {
+        text-align: center;
+      }
+    }
+
+    .hand_name {
+      text-align: right;
+      padding-right: 70px;
+    }
+  }
+
+  .stats_left {
+    float: left;
+    padding-right: 1px;
+    padding-left: 0px;
+
+    .plays_left {
+      float: right;
+      width: 33%;
+
+      input {
+        text-align: center;
+      }
     }
   }
 }
 
-.col-md-13 {
-  width: 7.692307692%;
-  margin: 0px !important;
+
+.hand_wrapper.stats_left {
+  width: 35%
 }
+
+.hand_wrapper.stats_right {
+  width: 65%
+}
+
+
+.defense {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+
 
 /* users index */
 
