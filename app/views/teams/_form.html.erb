@@ -13,25 +13,25 @@
 
 <div class="col-md-4">
   <div class="field">
-  <% @stadium = Stadium.order("stadium") %>
-    <%= f.label :stadium_id %><br>
-    <%= f.select :stadium_id, options_from_collection_for_select(@stadium, 'id', 'stadium', @team.stadium_id) %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <% @stadium = Stadium.order("stadium") %>
+    <%= f.label :stadium_id %><br>
+    <%= f.select :stadium_id, options_from_collection_for_select(@stadium, 'id', 'stadium', @team.stadium_id) %>
   </div>
   <div class="field">
     <%= f.label :league %><br>
     <%= f.select :league, options_for_select(%w[American National], @team.league) %>
   </div>
   <div class="field">
-    <%= f.label :league_sub %><br>
-    <%= f.select :league_sub, options_for_select(%w[east west], @team.league_sub) %>
+    <%= f.label "Division" %><br>
+    <%= f.select :league_sub, options_for_select(%w[East West], @team.league_sub) %>
   </div>
   <div class="actions">
     <%= f.submit %>

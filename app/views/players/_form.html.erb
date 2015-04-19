@@ -31,7 +31,7 @@
   </div>
   <div class="col-md-2">
     <%= f.label :player_type %><br>
-    <%= f.select :player_type, options_for_select(%w[batter pitcher], @player_type == "pitcher"||"batter" ? @player_type : @player.player_type) %>
+    <%= f.select :player_type, options_for_select(%w[batter pitcher], @player_type == 'pitcher'||'batter' ? @player_type : @player.player_type) %>
   </div>
 </div>
 
@@ -72,7 +72,7 @@
 
 
   <div class="offense col-md-12"><h3>Offense</h3>
-    <%= f.fields_for :offense do |offense| %>
+    <%= f.fields_for :offenses do |offense| %>
         <div class="col-md-2 offense_stat"><%= offense.label :vs_hand %><%= offense.text_field :vs_hand %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ifr %><%= offense.text_field :ifr %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ofr %><%= offense.text_field :ofr %></div>
@@ -84,10 +84,10 @@
   <div class="col-md-12 defense">
   <% if @player_type == "batter" || @player.player_type == "batter" %>
     <div class="batting_defense col-md-12"><h3>Batter Defense</h3>
-      <%= f.fields_for :defense do |defense| %>
+      <%= f.fields_for :defenses do |defense| %>
           <div class="col-md-2 defense_stat"><%= defense.label :position %><%= defense.text_field :position %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :error %><%= defense.text_field :error %></div>
-          <div class="col-md-2 defense_stat"><%= defense.label :rnge %><%= defense.text_field :rnge %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label "range" %><%= defense.text_field :rnge %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :throw %><%= defense.text_field :throw %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :passedball %><%= defense.text_field :passedball %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :pickoff %><%= defense.text_field :pickoff %></div>
@@ -95,13 +95,18 @@
     </div>
   <% elsif @player_type == "pitcher" || @player.player_type == "pitcher" %>
     <div class="pitching_defense col-md-12"><h3>Pitcher Defense</h3>
-      <%= f.fields_for :defense do |defense| %>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :position %></div>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :error %></div>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :rnge %></div>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :throw %></div>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :passedball %></div>
-          <div class="col-md-2 defense_stat"><%= defense.text_field :pickoff %></div>
+      <%= f.fields_for :defenses do |defense| %>
+          <div class="col-md-2 defense_stat"><%= defense.label :error %><%= defense.text_field :error %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label "Range" %><%= defense.text_field :rnge %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :hold %><%= defense.text_field :hold %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :wp %><%= defense.text_field :wp %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :balk %><%= defense.text_field :balk %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :bfsp %><%= defense.text_field :bfsp %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :bfrp %><%= defense.text_field :bfrp %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :rest0 %><%= defense.text_field :rest0 %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :rest1 %><%= defense.text_field :rest1 %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :rest2 %><%= defense.text_field :rest2 %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :rest3 %><%= defense.text_field :rest3 %></div>
       <% end %>
     </div>
   <% else %>

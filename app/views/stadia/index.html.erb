@@ -1,45 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stadia</h1>
+<h1>jLeague Stadiums</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th>Team</th>
-      <th>Stadium</th>
-      <th>Lfl</th>
-      <th>Lf</th>
-      <th>Lc</th>
-      <th>Cf</th>
-      <th>Rc</th>
-      <th>Rf</th>
-      <th>Rfl</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="col-md-12">
+      <div class="col-md-1"><h5>Stadium</h5></div>
+      <div class="col-md-1"><h5>City</h5></div>
+      <div class="col-md-1"><h5>Team</h5></div>
+      <div class="col-md-2"><h5>Location</h5></div>
+</div>
+<br>
+<div class="col-md-12">
     <% @stadia.each do |stadium| %>
-      <tr>
-        <td><%= stadium.location_id %></td>
-        <td><%= stadium.team_id %></td>
-        <td><%= stadium.stadium %></td>
-        <td><%= stadium.lfl %></td>
-        <td><%= stadium.lf %></td>
-        <td><%= stadium.lc %></td>
-        <td><%= stadium.cf %></td>
-        <td><%= stadium.rc %></td>
-        <td><%= stadium.rf %></td>
-        <td><%= stadium.rfl %></td>
-        <td><%= link_to 'Show', stadium %></td>
-        <td><%= link_to 'Edit', edit_stadium_path(stadium) %></td>
-        <td><%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="col-md-1"><%= stadium.stadium %></div>
+        <div class="col-md-1"><%= Team.find(stadium.team_id).city %></div>
+        <div class="col-md-1"><%= Team.find(stadium.team_id).name %></div>
+        <div class="col-md-2"><%= Location.find(stadium.location_id).location %></div>
+        <div class="col-md-7"><%= link_to 'Show', stadium %>
+        <%= link_to 'Edit', edit_stadium_path(stadium) %>
+        <%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
-  </tbody>
-</table>
-
+</div>
 <br>
 
 <%= link_to 'New Stadium', new_stadium_path %>
