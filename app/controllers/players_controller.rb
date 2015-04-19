@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   @@plays = ["wild", "error", "l", "park", "1b", "1b", "3b", "hg-", "hg", "hg", "2b", "1b", "1b", "rg", "hf", "hr", "hb", "bb", "so", "3b", "2b", "2b", "rg+", "hf", "p"]
-
+  @@plays_pitcher = ["park", "wp_pb", "ofr", "ifr", "hb", "sg", "hf", "1b", "1b", "hf", "sg", "1b", "2b", "2b_f", "df", "df_f", "so", "so_f", "bb", "bb_f", "hg", "hg_f"]
 
   # GET /players
   # GET /players.json
@@ -18,9 +18,15 @@ class PlayersController < ApplicationController
   # GET /players/new
   def new
     @player = Player.new
+    @player_type = params[:player_type]
 
-    @@plays.each { |play| @player.plays.build play: play, vs_hand: "l" }
-    @@plays.each { |play| @player.plays.build play: play, vs_hand: "r" }
+    if @player_type == "batter"
+      @@plays.each { |play| @player.plays.build play: play, vs_hand: "l" }
+      @@plays.each { |play| @player.plays.build play: play, vs_hand: "r" }
+    elsif @player_type == "pitcher"
+      @@plays_pitcher.each { |play| @player.plays.build play: play, vs_hand: "l" }
+      @@plays_pitcher.each { |play| @player.plays.build play: play, vs_hand: "r" }
+    end
   end
 
   # GET /players/1/edit

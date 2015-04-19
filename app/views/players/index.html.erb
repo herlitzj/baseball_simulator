@@ -1,51 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Players</h1>
+<h1>jLeague Players</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Hand</th>
-      <th>Player type</th>
-      <th>Durability</th>
-      <th>Dldays</th>
-      <th>Run</th>
-      <th>Steal</th>
-      <th>Jump</th>
-      <th>Bat</th>
-      <th>Bunt</th>
-      <th>Wild</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="col-md-12">
+      <div class="col-md-1"><h5>First name</h5></div>
+      <div class="col-md-1"><h5>Last name</h5></div>
+      <div class="col-md-1"><h5>Team</h5></div>
+      <div class="col-md-1"><h5>Hand</h5></div>
+      <div class="col-md-1"><h5>Player type</h5></div>
+</div>
+<br>
+<div class="col-md-12">
     <% @players.each do |player| %>
       <tr>
-        <td><%= player.team_id %></td>
-        <td><%= player.first_name %></td>
-        <td><%= player.last_name %></td>
-        <td><%= player.hand %></td>
-        <td><%= player.player_type %></td>
-        <td><%= player.durability %></td>
-        <td><%= player.dldays %></td>
-        <td><%= player.run %></td>
-        <td><%= player.steal %></td>
-        <td><%= player.jump %></td>
-        <td><%= player.bat %></td>
-        <td><%= player.bunt %></td>
-        <td><%= player.wild %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="col-md-1"><%= player.first_name %></div>
+        <div class="col-md-1"><%= player.last_name %></div>
+        <div class="col-md-1"><%= Team.find(player.team_id).name %></div>
+        <div class="col-md-1"><%= player.hand %></div>
+        <div class="col-md-1"><%= player.player_type %></div>
+        <div class="col-md-7"><%= link_to 'Show', player %>
+        <%= link_to 'Edit', edit_player_path(player) %>
+        <%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
-  </tbody>
-</table>
-
+</div>
 <br>
 
-<%= link_to 'New Player', new_player_path %>
+<%= link_to 'Create New Batter', new_player_path(player_type: "batter") %>
+<%= link_to 'Create New Pitcher', new_player_path(player_type: "pitcher") %>
