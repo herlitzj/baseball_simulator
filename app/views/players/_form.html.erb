@@ -12,59 +12,59 @@
   <% end %>
 <div class="col-md-8">
 <div class="col-md-12"><h3>Player Info</h3>
-    <div class="col-md-2">
+    <div class="col-md-2  player_stats">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2  player_stats">
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2  player_stats">
   <% @team = Team.order("name") %>
     <%= f.label :team_id %><br>
     <%= f.select :team_id, options_from_collection_for_select(@team, 'id', 'name', @player.team_id) %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2  player_stats">
     <%= f.label :hand %><br>
     <%= f.select :hand, options_for_select(%w[r l], @player.hand) %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2  player_stats">
     <%= f.label :player_type %><br>
     <%= f.select :player_type, options_for_select(%w[batter pitcher], @player_type == 'pitcher'||'batter' ? @player_type : @player.player_type) %>
   </div>
 </div>
 
 <div class="col-md-12">
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :durability %><br>
     <%= f.number_field :durability %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :dldays %><br>
     <%= f.number_field :dldays %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :run %><br>
     <%= f.number_field :run %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :steal %><br>
     <%= f.number_field :steal %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :jump %><br>
     <%= f.number_field :jump %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :bat %><br>
     <%= f.text_field :bat %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :bunt %><br>
     <%= f.text_field :bunt %>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-1 player_stats">
     <%= f.label :wild %><br>
     <%= f.text_field :wild %>
   </div>

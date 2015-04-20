@@ -19,7 +19,13 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
     @player_type = params[:player_type]
+    @player_id = params[:id]
 
+    # generate ids to start nested form #
+    @player.offenses.build player_id: @player_id
+    @player.defenses.build player_id: @player_id
+
+    # generate central play column for nested plays form #
     if @player_type == "batter"
       @@plays.each { |play| @player.plays.build play: play, vs_hand: "l" }
       @@plays.each { |play| @player.plays.build play: play, vs_hand: "r" }
