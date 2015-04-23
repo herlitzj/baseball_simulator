@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<div class="col-md-5"><h4>Stadium Info</h4>
+<div class="col-md-6"><h4>Stadium Info</h4>
   <div class="field  col-md-5">
     <% @location = Location.order("location") %>
     <%= f.label :location_id %><br>
@@ -26,9 +26,49 @@
     <%= f.label :stadium %><br>
     <%= f.text_field :stadium %>
   </div>
+  <div class="field col-md-2">
+    <%= f.label :roof %><br>
+    <%= f.text_field :roof %>
   </div>
+  <div class="field col-md-2">
+    <%= f.label :foul %><br>
+    <%= f.text_field :foul %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :ifr_adj %><br>
+    <%= f.text_field :ifr_adj %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :ofr_adj %><br>
+    <%= f.text_field :ofr_adj %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :lp_ro %><br>
+    <%= f.text_field :lp_ro %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :rp_lo %><br>
+    <%= f.text_field :rp_lo %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :lsp %><br>
+    <%= f.text_field :lsp %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :rsp %><br>
+    <%= f.text_field :rsp %>
+  </div>
+  <div class="field col-md-2">
+    <%= f.label :surface %><br>
+    <%= f.text_field :surface %>
+  </div>
+  <div class="field col-md-3">
+    <%= f.label :surface_cond %><br>
+    <%= f.text_field :surface_cond %>
+  </div>
+</div>
 
-  <div class="col-md-7"><h4>Fence Height</h4>
+<div class="col-md-6"><h4>Fence Height</h4>
   <div class="stadium_stats field col-md-1">
     <%= f.label :lfl %><br>
     <%= f.number_field :lfl %>
