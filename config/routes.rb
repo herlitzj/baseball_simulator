@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :parks
+
+  resources :distances
+
   resources :offenses
 
   resources :defenses

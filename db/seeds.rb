@@ -168,7 +168,17 @@ Stadium.create!(location_id: 1,
 				cf: 17,
 				rc: 5,
 				rf: 5,
-				rfl: 3
+				rfl: 3,
+				roof: 'none',
+				foul: 'small',
+				ifr_adj: 'none',
+				ofr_adj: -1,
+				lp_ro: "1b",
+				rp_lo: "3b",
+				lsp: "2b",
+				rsp: "ss",
+				surface: "grass",
+				surface_cond: "poor"
 				)
 
 Stadium.create!(location_id: 1,
@@ -180,7 +190,17 @@ Stadium.create!(location_id: 1,
 				cf: 12,
 				rc: 12,
 				rf: 12,
-				rfl: 15
+				rfl: 15,
+				roof: 'none',
+				foul: 'small',
+				ifr_adj: 'none',
+				ofr_adj: "none",
+				lp_ro: "1b",
+				rp_lo: "3b",
+				lsp: "2b",
+				rsp: "ss",
+				surface: "grass",
+				surface_cond: "fair"
 				)
 
 
@@ -224,7 +244,7 @@ Team.create!(stadium_id: 0,
 			league_sub: "west"
 			)
 
-=end
+
 
 # PLAYER SEEDS #
 Player.create!(team_id: 0,
@@ -369,3 +389,85 @@ Offense.create!(player_id: 0,
 				df: "sp",
 				power: "sp"
 				)
+
+=end
+
+# DIRECTION SEEDS #
+
+Distance.create!(stadium_id: 0,
+				wind_direction: "cross",
+				lfl: 4,
+				lf: 6,
+				lc: 9,
+				cf: 18,
+				rc: 18,
+				rf: 17,
+				rfl: 16
+				)
+
+Distance.create!(stadium_id: 0,
+				wind_direction: "none",
+				lfl: 7,
+				lf: 8,
+				lc: 12,
+				cf: 20,
+				rc: 16,
+				rf: 14,
+				rfl: 13
+				)
+
+Distance.create!(stadium_id: 0,
+				wind_direction: "straight",
+				lfl: 6,
+				lf: 7,
+				lc: 10,
+				cf: 18,
+				rc: 14,
+				rf: 13,
+				rfl: 11
+				)
+
+
+# PARK SEEDS #
+
+Park.create!(stadium_id: 0,
+			field_option: "1blcf",
+			min: 0,
+			max: 36
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "2blc",
+			min: 37,
+			max: 58
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "2brc",
+			min: 59,
+			max: 81
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "3b",
+			min: 82,
+			max: 92
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "sg",
+			min: 93,
+			max: 94
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "rg",
+			min: 95,
+			max: 96
+			)
+
+Park.create!(stadium_id: 0,
+			field_option: "hf8",
+			min: 97,
+			max: 99
+			)

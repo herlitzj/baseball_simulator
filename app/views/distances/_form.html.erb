@@ -1,0 +1,53 @@
+<%= form_for(@distance) do |f| %>
+  <% if @distance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distance.errors.count, "error") %> prohibited this distance from being saved:</h2>
+
+      <ul>
+      <% @distance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stadium_id %><br>
+    <%= f.number_field :stadium_id %>
+  </div>
+  <div class="field">
+    <%= f.label :wind_direction %><br>
+    <%= f.text_field :wind_direction %>
+  </div>
+  <div class="field">
+    <%= f.label :lfl %><br>
+    <%= f.number_field :lfl %>
+  </div>
+  <div class="field">
+    <%= f.label :lf %><br>
+    <%= f.number_field :lf %>
+  </div>
+  <div class="field">
+    <%= f.label :lc %><br>
+    <%= f.number_field :lc %>
+  </div>
+  <div class="field">
+    <%= f.label :cf %><br>
+    <%= f.number_field :cf %>
+  </div>
+  <div class="field">
+    <%= f.label :rc %><br>
+    <%= f.number_field :rc %>
+  </div>
+  <div class="field">
+    <%= f.label :rf %><br>
+    <%= f.number_field :rf %>
+  </div>
+  <div class="field">
+    <%= f.label :rfl %><br>
+    <%= f.number_field :rfl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

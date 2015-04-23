@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419002715) do
+ActiveRecord::Schema.define(version: 20150422231911) do
 
   create_table "defenses", force: :cascade do |t|
     t.integer  "player_id"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 20150419002715) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "distances", force: :cascade do |t|
+    t.integer  "stadium_id"
+    t.string   "wind_direction"
+    t.integer  "lfl"
+    t.integer  "lf"
+    t.integer  "lc"
+    t.integer  "cf"
+    t.integer  "rc"
+    t.integer  "rf"
+    t.integer  "rfl"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string   "location"
     t.datetime "created_at", null: false
@@ -49,6 +63,15 @@ ActiveRecord::Schema.define(version: 20150419002715) do
     t.string   "power"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "parks", force: :cascade do |t|
+    t.integer  "stadium_id"
+    t.string   "field_option"
+    t.integer  "min"
+    t.integer  "max"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -112,8 +135,18 @@ ActiveRecord::Schema.define(version: 20150419002715) do
     t.integer  "rc"
     t.integer  "rf"
     t.integer  "rfl"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "roof"
+    t.string   "foul"
+    t.integer  "ifr_adj"
+    t.integer  "ofr_adj"
+    t.string   "lp_ro"
+    t.string   "rp_lo"
+    t.string   "lsp"
+    t.string   "rsp"
+    t.string   "surface"
+    t.string   "surface_cond"
   end
 
   create_table "teams", force: :cascade do |t|

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stadium_id: 1
+  field_option: MyString
+  min: 1
+  max: 1
+
+two:
+  stadium_id: 1
+  field_option: MyString
+  min: 1
+  max: 1

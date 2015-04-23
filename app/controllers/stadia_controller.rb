@@ -3,6 +3,7 @@ class StadiaController < ApplicationController
 
   @@month = ["April", "May", "June", "July", "August", "September", "October"]
   @@wind = ["cross", "none", "straight"]
+  @@park = ["1blcf", "2blc", "3b", "sg", "rg", "hf8"]
 
   # GET /stadia
   # GET /stadia.json
@@ -21,6 +22,8 @@ class StadiaController < ApplicationController
 
     # Generate new table rows for each month and wind condition
     @@month.each { |month| @@wind.each{ |wind| @stadium.winds.build month: month, wind: wind }}
+    @@wind.each { |wind| @stadium.distances.build wind_direction: wind}
+    @@park.each { |park| @stadium.parks.build field_option: park }
   end
 
   # GET /stadia/1/edit
@@ -76,7 +79,9 @@ class StadiaController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def stadium_params
       params.require(:stadium).permit(:location_id, :team_id, :stadium, :lfl, :lf, :lc, :cf, :rc, :rf, :rfl,
-        winds_attributes: [:stadium_id, :month, :wind, :min, :max]
+        winds_attributes: [:id, :stadium_id, :month, :wind, :min, :max],
+        distances_attributes: [:id, :stadium_id, :wind_direction, :lfl, :lf, :lc, :cf, :rc, :rf, :rfl],
+        parks_attributes: [:id, :stadium_id, :field_option, :min, :max]
         )
     end
 end

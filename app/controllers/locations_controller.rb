@@ -82,9 +82,9 @@ class LocationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
       params.require(:location).permit(:location,
-        temperatures_attributes: [:location_id, :month, :time, :temp, :min, :max],
-        skies_attributes: [:location_id, :month, :sky, :min, :max],
-        precipitation_attributes: [:location_id, :month, :precip, :min, :max]
+        temperatures_attributes: [:id, :location_id, :month, :time, :temp, :min, :max],
+        skies_attributes: [:id, :location_id, :month, :sky, :min, :max],
+        precipitations_attributes: [:id, :location_id, :month, :precip, :min, :max]
         )
     end
 end

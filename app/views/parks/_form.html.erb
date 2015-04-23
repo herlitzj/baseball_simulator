@@ -1,0 +1,33 @@
+<%= form_for(@park) do |f| %>
+  <% if @park.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@park.errors.count, "error") %> prohibited this park from being saved:</h2>
+
+      <ul>
+      <% @park.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stadium_id %><br>
+    <%= f.number_field :stadium_id %>
+  </div>
+  <div class="field">
+    <%= f.label :field_option %><br>
+    <%= f.text_field :field_option %>
+  </div>
+  <div class="field">
+    <%= f.label :min %><br>
+    <%= f.number_field :min %>
+  </div>
+  <div class="field">
+    <%= f.label :max %><br>
+    <%= f.number_field :max %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

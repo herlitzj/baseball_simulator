@@ -71,6 +71,33 @@
   <% end %>
 </div>
 
+<div class="park col-md-4"><h3>PARK?</h3>
+
+  <%= f.fields_for :parks do |park| %>
+    <div class="conditions_table col-md-4 <%= park.object.field_option %> field_option"> 
+        <%= park.text_field :field_option, readonly: true %>
+        <div class="conditions_table col-md-6">min:<%= park.text_field :min %></div>
+        <div class="conditions_table col-md-6">max:<%= park.text_field :max %></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="wind col-md-8"><h3>Distances</h3>
+
+  <%= f.fields_for :distances do |dist| %>
+    <div class="conditions_table col-md-4 <%= dist.object.wind_direction %> distance"> 
+        <%= dist.text_field :wind_direction, readonly: true %>
+        <div class="conditions_table col-md-2">lfl:<%= dist.text_field :lfl %></div>
+        <div class="conditions_table col-md-2">lf:<%= dist.text_field :lf %></div>
+        <div class="conditions_table col-md-2">lc:<%= dist.text_field :lc %></div>
+        <div class="conditions_table col-md-2">cf:<%= dist.text_field :cf %></div>
+        <div class="conditions_table col-md-2">rc:<%= dist.text_field :rc %></div>
+        <div class="conditions_table col-md-2">rf:<%= dist.text_field :rf %></div>
+        <div class="conditions_table col-md-2">rfl:<%= dist.text_field :rfl %></div>
+    </div>
+  <% end %>
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

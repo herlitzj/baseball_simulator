@@ -3,6 +3,7 @@ class PlayersController < ApplicationController
 
   @@plays = ["wild", "error", "l", "park", "1b", "1b", "3b", "hg-", "hg", "hg", "2b", "1b", "1b", "rg", "hf", "hr", "hb", "bb", "so", "3b", "2b", "2b", "rg+", "hf", "p"]
   @@plays_pitcher = ["park", "wp_pb", "ofr", "ifr", "hb", "sg", "hf", "1b", "1b", "hf", "sg", "1b", "2b", "2b_f", "df", "df_f", "so", "so_f", "bb", "bb_f", "hg", "hg_f"]
+  @@hand = ["l", "r"]
 
   # GET /players
   # GET /players.json
@@ -22,7 +23,6 @@ class PlayersController < ApplicationController
     @player_id = params[:id]
 
     # generate ids to start nested form #
-    @player.offenses.build player_id: @player_id
     @player.defenses.build player_id: @player_id
 
     # generate central play column for nested plays form #
@@ -33,6 +33,9 @@ class PlayersController < ApplicationController
       @@plays_pitcher.each { |play| @player.plays.build play: play, vs_hand: "l" }
       @@plays_pitcher.each { |play| @player.plays.build play: play, vs_hand: "r" }
     end
+
+    # generate offense hands
+    @@hand.each { |hand| @player.offenses.build vs_hand: hand}
   end
 
   # GET /players/1/edit
@@ -88,9 +91,9 @@ class PlayersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
       params.require(:player).permit(:team_id, :first_name, :last_name, :hand, :player_type, :durability, :dldays, :run, :steal, :jump, :bat, :bunt, :wild,
-        plays_attributes: [:player_id, :vs_hand, :min, :max, :play, :field, :fatigue],
-        offenses_attributes: [:player_id, :vs_hand, :ifr, :ofr, :df, :power],
-        defenses_attributes: [:player_id, :position, :error, :rnge, :throw, :passedball, :pickoff, :hold, :wp, :balk, :bfsp, :bfrp, :rest0, :rest1, :rest2, :rest3]
+        plays_attributes: [:id, :player_id, :vs_hand, :min, :max, :play, :field, :fatigue],
+        offenses_attributes: [:id, :player_id, :vs_hand, :ifr, :ofr, :df, :power],
+        defenses_attributes: [:id, :player_id, :position, :error, :rnge, :throw, :passedball, :pickoff, :hold, :wp, :balk, :bfsp, :bfrp, :rest0, :rest1, :rest2, :rest3]
         )
     end
 end

@@ -73,11 +73,13 @@
 
   <div class="offense col-md-12"><h3>Offense</h3>
     <%= f.fields_for :offenses do |offense| %>
-        <div class="col-md-2 offense_stat"><%= offense.label :vs_hand %><%= offense.text_field :vs_hand %></div>
+      <div class="col-md-12">
+        <div class="col-md-2 offense_stat"><%= offense.label :vs_hand %><%= offense.text_field :vs_hand, readonly: true %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ifr %><%= offense.text_field :ifr %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ofr %><%= offense.text_field :ofr %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :df %><%= offense.text_field :df %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :power %><%= offense.text_field :power %></div>
+      </div>
     <% end %>
   </div>
 
@@ -101,6 +103,7 @@
           <div class="col-md-2 defense_stat"><%= defense.label :hold %><%= defense.text_field :hold %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :wp %><%= defense.text_field :wp %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :balk %><%= defense.text_field :balk %></div>
+          <div class="col-md-2 defense_stat"><%= defense.label :pickoff %><%= defense.text_field :pickoff %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :bfsp %><%= defense.text_field :bfsp %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :bfrp %><%= defense.text_field :bfrp %></div>
           <div class="col-md-2 defense_stat"><%= defense.label :rest0 %><%= defense.text_field :rest0 %></div>

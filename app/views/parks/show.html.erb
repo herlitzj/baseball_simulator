@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stadium:</strong>
+  <%= @park.stadium_id %>
+</p>
+
+<p>
+  <strong>Field option:</strong>
+  <%= @park.field_option %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @park.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @park.max %>
+</p>
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stadium_id: 1
+  wind_direction: MyString
+  lfl: 1
+  lf: 1
+  lc: 1
+  cf: 1
+  rc: 1
+  rf: 1
+  rfl: 1
+
+two:
+  stadium_id: 1
+  wind_direction: MyString
+  lfl: 1
+  lf: 1
+  lc: 1
+  cf: 1
+  rc: 1
+  rf: 1
+  rfl: 1
