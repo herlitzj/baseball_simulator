@@ -1,0 +1,54 @@
+<p>
+  <strong>Home team:</strong>
+  <%= image_tag("teams/#{Team.find(@game.home_team).logo_url}") %>
+  <%= Team.find(@game.home_team).city + " " + Team.find(@game.home_team).name %>
+</p>
+
+<p>
+  <strong>Away team:</strong>
+  <%= image_tag("teams/#{Team.find(@game.away_team).logo_url}") %>
+  <%= Team.find(@game.away_team).city + " " + Team.find(@game.away_team).name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @game.date.strftime("%A, %B %d, %Y") %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @game.time.strftime('%H:%M') %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @game.location %>
+</p>
+
+<p>
+  <strong>Stadium:</strong>
+  <%= Stadium.find(@game.stadium).stadium %>
+</p>
+
+<p>
+  <strong>Wind:</strong>
+  <%= @game.wind %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @game.temperature %>
+</p>
+
+<p>
+  <strong>Sky:</strong>
+  <%= @game.sky %>
+</p>
+
+<p>
+  <strong>Precipitation:</strong>
+  <%= @game.precipitation %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425163324) do
+ActiveRecord::Schema.define(version: 20150425181831) do
 
   create_table "defenses", force: :cascade do |t|
     t.integer  "player_id"
@@ -46,6 +46,21 @@ ActiveRecord::Schema.define(version: 20150425163324) do
     t.integer  "rfl"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "home_team"
+    t.integer  "away_team"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "location"
+    t.integer  "stadium"
+    t.string   "wind"
+    t.string   "temperature"
+    t.string   "sky"
+    t.string   "precipitation"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "locations", force: :cascade do |t|

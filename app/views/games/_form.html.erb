@@ -1,0 +1,58 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% @team = Team.order("name") %>
+    <%= f.label :home_team %><br>
+    <%= f.select :home_team, options_from_collection_for_select(@team, 'id', 'name', @game.home_team) %>
+  </div>
+  <div class="field">
+    <%= f.label :away_team %><br>
+    <%= f.select :away_team, options_from_collection_for_select(@team, 'id', 'name', @game.away_team) %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.number_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :stadium %><br>
+    <%= f.number_field :stadium %>
+  </div>
+  <div class="field">
+    <%= f.label :wind %><br>
+    <%= f.text_field :wind %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature %><br>
+    <%= f.text_field :temperature %>
+  </div>
+  <div class="field">
+    <%= f.label :sky %><br>
+    <%= f.text_field :sky %>
+  </div>
+  <div class="field">
+    <%= f.label :precipitation %><br>
+    <%= f.text_field :precipitation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
