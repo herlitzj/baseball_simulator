@@ -1,0 +1,25 @@
+location_id,team_id,stadium,lfl,lf,lc,cf,rc,rf,rfl,roof,foul,ifr_adj,ofr_adj,lp_ro,rp_lo,lsp,rsp,surface,surface_cond
+11,1,Chase Field,9,9,10,25,10,9,9,yes,average,,,1b,3b,2b,ss,grass,fair
+1,2,Turner Field,8,8,8,8,8,8,8,no,average,,,1b,3b,2b,ss,grass,fair
+2,3,Camden Yards,7,7,7,7,7,25,25,no,small,,,1b,3b,2b,ss,grass,fair
+4,4,Fenway Park,37,37,37,17,5,5,3,no,small,,-1,1b,3b,2b,ss,grass,fair
+4,5,Wrigley Field,15,12,12,12,12,12,15,no,small,,,1b,3b,2b,ss,grass,fair
+4,6,Great American Ballpark,12,12,12,8,8,8,8,no,average,,,1b,3b,2b,ss,grass,fair
+4,7,Progressive Field,19,19,19,8,8,8,8,no,average,,,1b,3b,2b,ss,grass,excellent
+9,8,Coors Field,8,8,8,8,8,14,14,no,small,,,1b,3b,2b,ss,grass,fair
+4,9,Comerica Park,8,8,8,8,11,11,11,no,large,,,1b,3b,2b,ss,grass,fair
+11,10,Minute Maid Park,21,21,10,7,7,7,7,yes,average,,,1b,3b,2b,ss,grass,fair
+5,11,Kauffman Stadium,8,8,8,8,8,8,8,no,average,,,1b,3b,2b,ss,grass,poor
+10,12,Dodger Stadium,4,8,8,8,8,8,4,no,average,,,1b,3b,2b,ss,slow grass,fair
+3,13,Marlins Park,10,10,10,13,10,10,10,yes,average,,,1b,3b,2b,ss,grass,fair
+4,14,Miller Park,8,8,8,8,6,6,6,yes,average,,,1b,3b,2b,ss,grass,excellent
+6,15,Target Field,8,8,8,8,23,23,23,no,average,,,1b,3b,2b,ss,grass,fair
+2,16,Yankee Stadium,8,8,8,8,8,8,8,no,average,,,1b,3b,2b,ss,grass,fair
+7,17,Overstock Coliseum,8,15,15,8,15,15,8,no,very large,,,1b,3b,2b,ss,grass,fair
+2,18,Citizens Bank Park,8,8,13,6,13,13,13,no,average,1,,1b,3b,2b,ss,grass,fair
+4,19,PNC Park,6,6,6,10,10,21,21,no,average,,,1b,3b,2b,ss,grass,fair
+7,20,AT&T Park,8,8,11,8,25,25,25,no,average,,,1b,3b,2b,ss,grass,fair
+8,21,Safeco Field,8,8,8,8,8,8,8,yes,large,,,1b,3b,2b,ss,grass,fair
+5,22,Busch Stadium,9,9,9,9,9,9,9,no,large,,,1b,3b,2b,ss,grass,fair
+11,23,Rangers Ballpark,14,14,14,8,8,8,8,no,small,,,1b,3b,2b,ss,grass,poor
+4,24,Rogers Centre,10,10,10,10,10,10,10,yes,average,1,,1b,3b,2b,ss,turf,poor

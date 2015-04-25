@@ -3,21 +3,21 @@
 <h1>jLeague Teams</h1>
 
 <div class="col-md-12">
-      <div class="col-md-1"><h5>Team</h5></div>
-      <div class="col-md-1"><h5>City</h5></div>
-      <div class="col-md-1"><h5>Stadium</h5></div>
-      <div class="col-md-1"><h5>League</h5></div>
-      <div class="col-md-1"><h5>Division</h5></div>
+      <div class="col-md-2"><h5>Team</h5></div>
+      <div class="col-md-2"><h5>City</h5></div>
+      <div class="col-md-2"><h5>Stadium</h5></div>
+      <div class="col-md-2"><h5>League</h5></div>
+      <div class="col-md-2"><h5>Division</h5></div>
 </div>
 <br>
 <div class="col-md-12">
     <% @teams.each do |team| %>
-        <div class="col-md-1"><%= team.name %></div>
-        <div class="col-md-1"><%= team.city %></div>
-        <div class="col-md-1"><%= Stadium.find(team.stadium_id).stadium %></div>
-        <div class="col-md-1"><%= team.league %></div>
-        <div class="col-md-1"><%= team.league_sub %></div>
-        <div class="col-md-7"><%= link_to 'Show', team %>
+        <div class="col-md-2"><%= team.name %></div>
+        <div class="col-md-2"><%= team.city %></div>
+        <div class="col-md-2"><%= Stadium.find(team.stadium_id).stadium %></div>
+        <div class="col-md-2"><%= team.league %></div>
+        <div class="col-md-2"><%= team.league_sub %></div>
+        <div class="col-md-2"><%= link_to 'Show', team %>
         <%= link_to 'Edit', edit_team_path(team) %>
         <%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>

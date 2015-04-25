@@ -1,0 +1,22 @@
+location_id,month,sky,min,max
+4,april,clear,0,20
+4,april,partly cloudy,21,46
+4,april,cloudy,47,99
+4,may,clear,0,23
+4,may,partly cloudy,24,57
+4,may,cloudy,58,99
+4,june,clear,0,23
+4,june,partly cloudy,24,62
+4,june,cloudy,63,99
+4,july,clear,0,29
+4,july,partly cloudy,30,72
+4,july,cloudy,73,99
+4,august,clear,0,33
+4,august,partly cloudy,34,72
+4,august,cloudy,73,99
+4,september,clear,0,33
+4,september,partly cloudy,34,67
+4,september,cloudy,68,99
+4,october,clear,0,33
+4,october,partly cloudy,34,63
+4,october,cloudy,64,99

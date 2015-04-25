@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 =begin
-User.create!(name: "Example User",
-			email: "example@railstutorial.org",
-			password: "foobar",
-			password_confirmation: "foobar",
+User.create!(name: "Admin",
+			email: "admin@email.com",
+			password: "password",
+			password_confirmation: "password",
 			admin: true)
 
 99.times do |n|
@@ -225,26 +225,26 @@ Wind.create!(stadium_id: 1,
 			min: 86,
 			max: 99
 			)
-
+=end
 
 
 # TEAM SEEDS #
 
-Team.create!(stadium_id: 0,
+Team.create!(stadium_id: 1,
 			city: "Boston",
 			name: "Red Sox",
 			league: "American",
 			league_sub: "east"
 			)
 
-Team.create!(stadium_id: 0,
+Team.create!(stadium_id: 1,
 			city: "Chicago",
 			name: "Cubs",
 			league: "National",
 			league_sub: "west"
 			)
 
-
+=begin
 
 # PLAYER SEEDS #
 Player.create!(team_id: 0,
@@ -390,7 +390,7 @@ Offense.create!(player_id: 0,
 				power: "sp"
 				)
 
-=end
+
 
 # DIRECTION SEEDS #
 
@@ -471,3 +471,5 @@ Park.create!(stadium_id: 0,
 			min: 97,
 			max: 99
 			)
+
+=end

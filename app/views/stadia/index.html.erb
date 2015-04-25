@@ -3,19 +3,19 @@
 <h1>jLeague Stadiums</h1>
 
 <div class="col-md-12">
-      <div class="col-md-1"><h5>Stadium</h5></div>
-      <div class="col-md-1"><h5>City</h5></div>
-      <div class="col-md-1"><h5>Team</h5></div>
+      <div class="col-md-2"><h5>Stadium</h5></div>
+      <div class="col-md-2"><h5>City</h5></div>
+      <div class="col-md-2"><h5>Team</h5></div>
       <div class="col-md-2"><h5>Location</h5></div>
 </div>
 <br>
 <div class="col-md-12">
     <% @stadia.each do |stadium| %>
-        <div class="col-md-1"><%= stadium.stadium %></div>
-        <div class="col-md-1"><%= Team.find(stadium.team_id).city %></div>
-        <div class="col-md-1"><%= Team.find(stadium.team_id).name %></div>
+        <div class="col-md-2"><%= stadium.stadium %></div>
+        <div class="col-md-2"><%= Team.find(stadium.team_id).city %></div>
+        <div class="col-md-2"><%= Team.find(stadium.team_id).name %></div>
         <div class="col-md-2"><%= Location.find(stadium.location_id).location %></div>
-        <div class="col-md-7"><%= link_to 'Show', stadium %>
+        <div class="col-md-4"><%= link_to 'Show', stadium %>
         <%= link_to 'Edit', edit_stadium_path(stadium) %>
         <%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %></div>
     <% end %>
