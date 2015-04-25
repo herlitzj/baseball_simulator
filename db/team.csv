@@ -1,25 +1,25 @@
-stadium_id,city,name,league,league_sub
-1,Arizona,Diamondbacks,national,west
-2,Atlanta,Braves,national,east
-3,Baltimore,Orioles,american,east
-4,Boston,Red Sox,american,east
-5,Chicago,Cubs,national,central
-6,Cincinnati,Reds,national,central
-7,Cleveland,Indians,american,central
-8,Colorado,Rockies,national,west
-9,Detroit,Tigers,american,central
-10,Houston,Astros,american,west
-11,Kansas City,Royals,american,central
-12,Los Angeles,Dodgers,national,west
-13,Miami,Marlins,national,east
-14,Milwaukee,Brewers,national,central
-15,Minnesota,Twins,american,central
-16,New York,Yankees,american,east
-17,Oakland,Athletics,american,west
-18,Philadelphia,Phillies,national,east
-19,Pittsburgh,Pirates,national,east
-20,San Francisco,Giants,national,west
-21,Seattle,Mariners,american,west
-22,St. Louis,Cardinals,national,central
-23,Texas,Rangers,american,west
-24,Toronto,Blue Jays,american,east
+stadium_id,city,name,league,league_sub,logo_url
+1,Arizona,Diamondbacks,national,west,diamondbacks.gif
+2,Atlanta,Braves,national,east,braves.gif
+3,Baltimore,Orioles,american,east,orioles.gif
+4,Boston,Red Sox,american,east,redsox.gif
+5,Chicago,Cubs,national,central,cubs.gif
+6,Cincinnati,Reds,national,central,reds.gif
+7,Cleveland,Indians,american,central,indians.gif
+8,Colorado,Rockies,national,west,rockies.gif
+9,Detroit,Tigers,american,central,tigers.gif
+10,Houston,Astros,american,west,astros.gif
+11,Kansas City,Royals,american,central,royals.gif
+12,Los Angeles,Dodgers,national,west,dodgers.gif
+13,Miami,Marlins,national,east,marlins.gif
+14,Milwaukee,Brewers,national,central,brewers.gif
+15,Minnesota,Twins,american,central,twins.gif
+16,New York,Yankees,american,east,yankees.gif
+17,Oakland,Athletics,american,west,athletics.gif
+18,Philadelphia,Phillies,national,east,phillies.gif
+19,Pittsburgh,Pirates,national,east,pirates.gif
+20,San Francisco,Giants,national,west,giants.gif
+21,Seattle,Mariners,american,west,mariners.gif
+22,St. Louis,Cardinals,national,central,cardinals.gif
+23,Texas,Rangers,american,west,rangers.gif
+24,Toronto,Blue Jays,american,east,bluejays.gif

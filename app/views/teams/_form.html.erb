@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+<div id="team_logo" class="col-md-12">
+  <% team=@team.logo_url %>
+  <%= image_tag("teams/#{team}") %>
+</div>
+
 <div class="col-md-4">
   <div class="field">
     <%= f.label :name %><br>
@@ -32,6 +37,10 @@
   <div class="field">
     <%= f.label "Division" %><br>
     <%= f.select :league_sub, options_for_select(%w[East West], @team.league_sub) %>
+  </div>
+  <div class="field">
+    <%= f.label :logo_url %><br>
+    <%= f.text_field :logo_url %>
   </div>
   <div class="actions">
     <%= f.submit %>
