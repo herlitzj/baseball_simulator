@@ -1,40 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h1>jLeague Games</h1>
 
-<h1>Listing Games</h1>
-
-<table>
+<table id="jleague_table" class="order-table table">
+<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
   <thead>
     <tr>
-      <th>Home team</th>
-      <th>Away team</th>
+      <th>Game</th>
       <th>Date</th>
-      <th>Time</th>
-      <th>Location</th>
+      <th>Start Time</th>
       <th>Stadium</th>
       <th>Wind</th>
       <th>Temperature</th>
       <th>Sky</th>
       <th>Precipitation</th>
-      <th colspan="3"></th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.home_team %></td>
-        <td><%= game.away_team %></td>
-        <td><%= game.date %></td>
-        <td><%= game.time %></td>
-        <td><%= game.location %></td>
-        <td><%= game.stadium %></td>
+        <td><%= link_to Team.find_by_id(game.away_team).name + " at " + Team.find_by_id(game.home_team).name, game %></td>
+        <td><%= game.date.strftime("%A, %B %d, %Y") %></td>
+        <td><%= game.time.strftime('%H:%M') %></td>
+        <td><%= Stadium.find_by_id(game.stadium).stadium %></td>
         <td><%= game.wind %></td>
         <td><%= game.temperature %></td>
         <td><%= game.sky %></td>
         <td><%= game.precipitation %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
 <h1>jLeague Players</h1>
 
-<div class="col-md-12">
-      <div class="col-md-1"><h5>First name</h5></div>
-      <div class="col-md-1"><h5>Last name</h5></div>
-      <div class="col-md-1"><h5>Team</h5></div>
-      <div class="col-md-1"><h5>Hand</h5></div>
-      <div class="col-md-1"><h5>Player type</h5></div>
-</div>
-<br>
-<div class="col-md-12">
-    <% @players.each do |player| %>
-      <tr>
-        <div class="col-md-1"><%= player.first_name %></div>
-        <div class="col-md-1"><%= player.last_name %></div>
-        <div class="col-md-1"><%= Team.find(player.team_id).name %></div>
-        <div class="col-md-1"><%= player.hand %></div>
-        <div class="col-md-1"><%= player.player_type %></div>
-        <div class="col-md-7"><%= link_to 'Show', player %>
-        <%= link_to 'Edit', edit_player_path(player) %>
-        <%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    <% end %>
-</div>
-<br>
+<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+<table id="jleague_table" class="order-table table">
+  <thead>
+        <th>Name</th>
+        <th>Team</th>
+        <th>Hand</th>
+        <th>Player type</th>
+  </thead>
+  <tbody>
+      <% @players.order('last_name').each do |player| %>
+        <tr>
+          <td><%= link_to player.last_name + ", " + player.first_name, edit_player_path(player) %></td>
+          <td><%= Team.find(player.team_id).name %></td>
+          <td><%= player.hand %></td>
+          <td><%= player.player_type %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Create New Batter', new_player_path(player_type: "batter") %>
 <%= link_to 'Create New Pitcher', new_player_path(player_type: "pitcher") %>
+</div>

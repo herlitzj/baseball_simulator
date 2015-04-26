@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>jLeague Locations</h1>
 
-<div class="col-md-12">
-      <div class="col-md-3"><h5>Location</h5></div>
-</div>
-<br>
-<div class="col-md-12">
-    <% @locations.each do |location| %>
-      <tr>
-        <div class="col-md-3"><%= location.location %></div>
-        <div class="col-md-9"><%= link_to 'Show', location %>
-        <%= link_to 'Edit', edit_location_path(location) %>
-        <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    <% end %>
-</div>
-<br>
-
+<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+<table id="jleague_table" class="order-table table">
+	<thead>
+	      <th>Location</th>
+	      <th>Delete</th>
+	</thead>
+	<tbody>
+	    <% @locations.order('location').each do |location| %>
+	      <tr>
+	        <td><%= link_to location.location, edit_location_path(location) %></td>
+	        <td>
+	        <%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    </tr>
+	    <% end %>
+	</tbody>
+</table>
 <%= link_to 'Create New Location', new_location_path %>
+</div>

@@ -1,25 +1,27 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>jLeague Stadiums</h1>
 
-<div class="col-md-12">
-      <div class="col-md-2"><h5>Stadium</h5></div>
-      <div class="col-md-2"><h5>City</h5></div>
-      <div class="col-md-2"><h5>Team</h5></div>
-      <div class="col-md-2"><h5>Location</h5></div>
-</div>
-<br>
-<div class="col-md-12">
-    <% @stadia.each do |stadium| %>
-        <div class="col-md-2"><%= stadium.stadium %></div>
-        <div class="col-md-2"><%= Team.find(stadium.team_id).city %></div>
-        <div class="col-md-2"><%= Team.find(stadium.team_id).name %></div>
-        <div class="col-md-2"><%= Location.find(stadium.location_id).location %></div>
-        <div class="col-md-4"><%= link_to 'Show', stadium %>
-        <%= link_to 'Edit', edit_stadium_path(stadium) %>
-        <%= link_to 'Destroy', stadium, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+<table id="jleague_table" class="order-table table">
+<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+  <thead>
+    <tr>
+      <th>Stadium</th>
+      <th>City</th>
+      <th>Team</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stadia.order('stadium').each do |stadium| %>
+    <tr>
+      <td><%= link_to stadium.stadium, edit_stadium_path(stadium) %></td>
+      <td><%= Team.find(stadium.team_id).city %></td>
+      <td><%= Team.find(stadium.team_id).name %></td>
+      <td><%= Location.find(stadium.location_id).location %></td>
+    </tr>
     <% end %>
-</div>
-<br>
+  </tbody>
+</table>
 
 <%= link_to 'New Stadium', new_stadium_path %>
+</div>

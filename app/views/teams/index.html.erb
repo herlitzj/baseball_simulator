@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>jLeague Teams</h1>
+<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filter">
+<table id="jleague_table" class="order-table table">
 
-<div class="col-md-12">
-      <div class="col-md-2"><h5>Team</h5></div>
-      <div class="col-md-2"><h5>City</h5></div>
-      <div class="col-md-2"><h5>Stadium</h5></div>
-      <div class="col-md-2"><h5>League</h5></div>
-      <div class="col-md-2"><h5>Division</h5></div>
-</div>
-<br>
-<div class="col-md-12">
-    <% @teams.each do |team| %>
-        <div class="col-md-2"><%= team.name %></div>
-        <div class="col-md-2"><%= team.city %></div>
-        <div class="col-md-2"><%= Stadium.find(team.stadium_id).stadium %></div>
-        <div class="col-md-2"><%= team.league %></div>
-        <div class="col-md-2"><%= team.league_sub %></div>
-        <div class="col-md-2"><%= link_to 'Show', team %>
-        <%= link_to 'Edit', edit_team_path(team) %>
-        <%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+<thead>
+    <tr>
+      <th>Team</th>
+      <th>City</th>
+      <th>Stadium</th>
+      <th>League</th>
+      <th>Division</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.order('name').each do |team| %>
+    <tr>
+      <td><%= link_to team.name, edit_team_path(team) %></td>
+      <td><%= team.city %></td>
+      <td><%= Stadium.find(team.stadium_id).stadium %></td>
+      <td><%= team.league.capitalize %></td>
+      <td><%= team.league_sub.capitalize %></td>
+    </tr>
     <% end %>
-</div>
-<br>
+  </tbody>
+</table>
 
 <%= link_to 'New Team', new_team_path %>
+</div>
