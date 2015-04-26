@@ -289,6 +289,22 @@ input {
 
 /* tables */
 
+table#jleague_plays_table {
+  margin: 0 auto;
+  padding: 0;
+
+  table {
+    margin: 0 auto;
+    
+
+    td input {
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 auto;
+    }
+  }
+}
+
 table#jleague_table {
   margin: 0 auto;
   border-collapse: collapse;

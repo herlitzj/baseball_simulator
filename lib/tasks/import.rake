@@ -4,8 +4,8 @@
 require 'csv'
 namespace :db do
   task :import_csv => :environment do
-    CSV.foreach("db/plays.csv", :headers => true) do |row|
-      Play.create!(row.to_hash)
+    CSV.foreach("db/defense_alt.csv", :headers => true) do |row|
+      Defense.create!(row.to_hash)
     end
   end
 end

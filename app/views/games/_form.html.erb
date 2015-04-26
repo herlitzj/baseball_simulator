@@ -26,33 +26,9 @@
   </div>
   <div class="field">
     <%= f.label :time %><br>
-    <%= f.time_select :time %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.number_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :stadium %><br>
-    <%= f.number_field :stadium %>
-  </div>
-  <div class="field">
-    <%= f.label :wind %><br>
-    <%= f.text_field :wind %>
-  </div>
-  <div class="field">
-    <%= f.label :temperature %><br>
-    <%= f.text_field :temperature %>
-  </div>
-  <div class="field">
-    <%= f.label :sky %><br>
-    <%= f.text_field :sky %>
-  </div>
-  <div class="field">
-    <%= f.label :precipitation %><br>
-    <%= f.text_field :precipitation %>
+    <%= f.time_select :time, {minute_step: 15} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Start Game" %>
   </div>
 <% end %>

@@ -27,7 +27,7 @@
   </div>
   <div class="col-md-2  player_stats">
     <%= f.label :hand %><br>
-    <%= f.select :hand, options_for_select(%w[r l], @player.hand) %>
+    <%= f.select :hand, options_for_select(%w[r l s], @player.hand) %>
   </div>
   <div class="col-md-2  player_stats">
     <%= f.label :player_type %><br>
@@ -70,18 +70,17 @@
   </div>
 </div>
 
-
+<% if @player_type == "batter" || @player.player_type == "batter" %>
   <div class="offense col-md-12"><h3>Offense</h3>
     <%= f.fields_for :offenses do |offense| %>
-      <div class="col-md-12">
         <div class="col-md-2 offense_stat"><%= offense.label :vs_hand %><%= offense.text_field :vs_hand, readonly: true %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ifr %><%= offense.text_field :ifr %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :ofr %><%= offense.text_field :ofr %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :df %><%= offense.text_field :df %></div>
         <div class="col-md-2 offense_stat"><%= offense.label :power %><%= offense.text_field :power %></div>
-      </div>
     <% end %>
   </div>
+<% end %>
 
   <div class="col-md-12 defense">
   <% if @player_type == "batter" || @player.player_type == "batter" %>
@@ -117,6 +116,7 @@
   </div>
 </div>
 
+<!--
 <div class="col-md-4">
   <div class="stats col-md-12"><h3>Player Stats</h3>
     <%= f.fields_for :plays do |play| %> 
@@ -139,6 +139,95 @@
       <% end %>
     <% end %>
   </div>
+</div>
+-->
+
+<div class="col-md-4"><h3>Play Matrix</h3>
+<table id="jleague_plays_table">
+  <thead>
+    <tr>
+      <th colspan="3"><h4>vs. Left</h4></th>
+      <th></th>
+      <th colspan="3" style="text-align: right"><h4>vs. Right</h4></th>
+    </tr>
+    <tr>
+      <th>min</th>
+      <th>max</th>
+      <th>field</th>
+      <th>play</th>
+      <th>field</th>
+      <th>min</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "l" %>
+          <tr><td><%= play.text_field :min %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "l" %>
+          <tr><td><%= play.text_field :max %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "l" %>
+          <tr><td><%= play.text_field :field %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "l" %>
+          <tr><td><%= play.text_field :play %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "r" %>
+          <tr><td><%= play.text_field :field %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "r" %>
+          <tr><td><%= play.text_field :min %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <%= f.fields_for :plays do |play| %> 
+          <% if play.object.vs_hand == "r" %>
+          <tr><td><%= play.text_field :max %></td></tr>
+          <% end %>
+          <% end %>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 <div class="col-md-12">
