@@ -1,0 +1,12 @@
+team_id,first_name,last_name,hand,player_type,durability,dldays,wild,bat,run,steal,jump,bunt
+1,frank,first,l,batter,7,15,,,1,1,0,Fr_-1
+1,greg,curl,l,batter,3,113,,,1,8,1,Av_1
+1,john,avis,r,batter,9,0,,,3,11,1,Av_0
+1,matt,hamp,l,batter,7,0,,,4,7,0,Av_2
+1,kenny,howel,r,batter,6,35,,,1,6,0,Ex_0
+1,eddy,money,r,batter,9,0,,,0,1,0,Fr_-1
+1,dan,navel,s,batter,4,0,,,-2,-1,0,Fr_-1
+1,joe,rose,s,batter,5,74,,,3,9,1,Av_0
+1,mike,meek,l,pitcher,7,0,,rsp#2_fr,-2,0,,Av_-1
+1,john,paper,r,pitcher,6,0,,rsp#1_pr,0,0,,Fr_-1
+1,joseph,walds,r,pitcher,5,17,w_wp,rsp#1_pr,0,0,,Fr_-1

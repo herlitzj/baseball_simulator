@@ -13,7 +13,7 @@
   <tbody>
       <% @players.order('last_name').each do |player| %>
         <tr>
-          <td><%= link_to player.last_name + ", " + player.first_name, edit_player_path(player) %></td>
+          <td><%= link_to player.last_name.capitalize + ", " + player.first_name.capitalize, edit_player_path(player) %></td>
           <td><%= Team.find(player.team_id).name %></td>
           <td><%= player.hand %></td>
           <td><%= player.player_type %></td>

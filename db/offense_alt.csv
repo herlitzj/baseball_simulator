@@ -1,0 +1,17 @@
+player_id,vs_hand,ifr,ofr,df,power
+12,r,sp,sp,sp,ex
+12,l,sp,sp,sp,av
+13,r,sp,sp,sp,av
+13,l,sp,p,p,vg
+14,r,p,sp,sp,ex
+14,l,p,sp,p,vg
+15,r,sp,p,p,vg
+15,l,p,sp,sp,vg
+16,r,sp,o,sp,av
+16,l,p,o,sp,vg
+17,r,p,sp,sp,ex
+17,l,p,sp,sp,ex
+18,r,sp,sp,p,ex
+18,l,p,p,p,ex
+19,r,sp,sp,p,av
+19,l,p,p,sp,av

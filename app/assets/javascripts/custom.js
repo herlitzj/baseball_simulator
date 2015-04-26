@@ -1,9 +1,34 @@
 $(document).ready(function () {
 
+// SCRIPT TO WRAP DIVS IN MONTHS //
+var monthArray = ["april","may", "june", "july", "august", "september", "october"];
+	var arrayLength = monthArray.length;
+	for (var i = 0; i < arrayLength; i++) {
+		$( ".temp" + "." + monthArray[i] ).wrapAll( "<div class=' " + monthArray[i] + " month_wrapper col-md-4' />" );
+		$( ".sky" + "." + monthArray[i] ).wrapAll( "<div class=' " + monthArray[i] + " month_wrapper col-md-4' />" );
+		$( ".precip" + "." + monthArray[i] ).wrapAll( "<div class=' " + monthArray[i] + " month_wrapper col-md-4' />" );
+		$( ".wind" + "." + monthArray[i] ).wrapAll( "<div class=' " + monthArray[i] + " month_wrapper col-md-3' />" );
+		
+		$( '.' + monthArray[i] + '.month_wrapper' ).prepend( '<h4 class="month_name col-md-12">' + monthArray[i] + '</h4>' );
+		
+	}
+
+
+// SCRIPT TO WRAP DIVS IN PLAYER INFO //
+var handArray = ["stats_left", "stats_right"];
+	var handVs = ["Vs. Left", "Vs. Right"]
+	var arrayLength = handArray.length;
+	for (var i = 0; i < arrayLength; i++) {
+		$( "." + handArray[i] ).wrapAll( "<span class=' " + handArray[i] + " hand_wrapper' />" );
+
+		$( '.' + handArray[i] + '.hand_wrapper' ).prepend( '<h4 class="hand_name col-md-12">' + handVs[i] + '</h4>' );
+		
+	}
+
 // SCRIPT TO TURN TABLES INTO CARDS ON SMALL SCREENS //
 var headertext = [],
   headers = document.querySelectorAll("#jleague_table th"),
-  tablerows = document.querySelectorAll("#jleague_table th"),
+  tablerows = document.querySelectorAll("#jleague_table tr"),
   tablebody = document.querySelector("#jleague_table tbody");
 
 for (var i = 0; i < headers.length; i++) {

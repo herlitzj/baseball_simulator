@@ -1,0 +1,12 @@
+team_id,first_name,last_name,hand,player_type,durability,dldays,wild,bat,run,steal,jump,bunt
+10,freddie,freeman,l,batter,7,15,,,1,1,0,Fr_-1
+10,granderson,curtis,l,batter,3,113,,,1,8,1,Av_1
+10,jones,adam,r,batter,9,0,,,3,11,1,Av_0
+10,matthew,houston,l,batter,7,0,,,4,7,0,Av_2
+10,kendrick,howard,r,batter,6,35,,,1,6,0,Ex_0
+10,evan,longoria,r,batter,9,0,,,0,1,0,Fr_-1
+10,dioner,navarro,s,batter,4,0,,,-2,-1,0,Fr_-1
+10,jose,reyes,s,batter,5,74,,,3,9,1,Av_0
+10,mike,minor,l,pitcher,7,0,,rsp#2_fr,-2,0,,Av_-1
+10,johnathon,papelbon,r,pitcher,6,0,,rsp#1_pr,0,0,,Fr_-1
+10,jordan,walden,r,pitcher,5,17,w_wp,rsp#1_pr,0,0,,Fr_-1

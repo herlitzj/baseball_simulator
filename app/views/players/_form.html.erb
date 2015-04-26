@@ -31,7 +31,7 @@
   </div>
   <div class="col-md-2  player_stats">
     <%= f.label :player_type %><br>
-    <%= f.select :player_type, options_for_select(%w[batter pitcher], @player_type == 'pitcher'||'batter' ? @player_type : @player.player_type) %>
+    <%= f.select :player_type, options_for_select(%w[batter pitcher], @player.player_type == nil ? @player_type : @player.player_type) %>
   </div>
 </div>
 
