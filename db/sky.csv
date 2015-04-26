@@ -20,3 +20,213 @@ location_id,month,sky,min,max
 4,october,clear,0,33
 4,october,partly cloudy,34,63
 4,october,cloudy,64,99
+1,april,clear,0,33
+1,april,partly cloudy,34,60
+1,april,cloudy,61,99
+1,may,clear,0,30
+1,may,partly cloudy,31,67
+1,may,cloudy,68,99
+1,june,clear,0,23
+1,june,partly cloudy,24,67
+1,june,cloudy,68,99
+1,july,clear,0,20
+1,july,partly cloudy,21,63
+1,july,cloudy,64,99
+1,august,clear,0,23
+1,august,partly cloudy,24,70
+1,august,cloudy,71,99
+1,september,clear,0,33
+1,september,partly cloudy,34,63
+1,september,cloudy,64,99
+1,october,clear,0,47
+1,october,partly cloudy,48,70
+1,october,cloudy,71,99
+2,april,clear,0,27
+2,april,partly cloudy,28,57
+2,april,cloudy,58,99
+2,may,clear,0,27
+2,may,partly cloudy,28,60
+2,may,cloudy,61,99
+2,june,clear,0,30
+2,june,partly cloudy,31,67
+2,june,cloudy,68,99
+2,july,clear,0,30
+2,july,partly cloudy,31,70
+2,july,cloudy,71,99
+2,august,clear,0,33
+2,august,partly cloudy,34,67
+2,august,cloudy,68,99
+2,september,clear,0,37
+2,september,partly cloudy,38,63
+2,september,cloudy,64,99
+2,october,clear,0,40
+2,october,partly cloudy,41,67
+2,october,cloudy,68,99
+3,april,clear,0,39
+3,april,partly cloudy,40,74
+3,april,cloudy,75,99
+3,may,clear,0,29
+3,may,partly cloudy,30,64
+3,may,cloudy,65,99
+3,june,clear,0,24
+3,june,partly cloudy,25,44
+3,june,cloudy,45,99
+3,july,clear,0,29
+3,july,partly cloudy,30,64
+3,july,cloudy,65,99
+3,august,clear,0,39
+3,august,partly cloudy,40,74
+3,august,cloudy,75,99
+3,september,clear,0,39
+3,september,partly cloudy,40,74
+3,september,cloudy,75,99
+3,october,clear,0,39
+3,october,partly cloudy,40,74
+3,october,cloudy,75,99
+5,april,clear,0,23
+5,april,partly cloudy,24,50
+5,april,cloudy,51,99
+5,may,clear,0,27
+5,may,partly cloudy,28,57
+5,may,cloudy,58,99
+5,june,clear,0,27
+5,june,partly cloudy,28,60
+5,june,cloudy,61,99
+5,july,clear,0,30
+5,july,partly cloudy,31,70
+5,july,cloudy,71,99
+5,august,clear,0,33
+5,august,partly cloudy,34,70
+5,august,cloudy,71,99
+5,september,clear,0,40
+5,september,partly cloudy,41,67
+5,september,cloudy,68,99
+5,october,clear,0,43
+5,october,partly cloudy,44,70
+5,october,cloudy,71,99
+6,april,clear,0,20
+6,april,partly cloudy,21,47
+6,april,cloudy,48,99
+6,may,clear,0,23
+6,may,partly cloudy,24,57
+6,may,cloudy,58,99
+6,june,clear,0,23
+6,june,partly cloudy,24,63
+6,june,cloudy,64,99
+6,july,clear,0,30
+6,july,partly cloudy,31,74
+6,july,cloudy,75,99
+6,august,clear,0,34
+6,august,partly cloudy,35,73
+6,august,cloudy,74,99
+6,september,clear,0,33
+6,september,partly cloudy,34,67
+6,september,cloudy,68,99
+6,october,clear,0,33
+6,october,partly cloudy,34,63
+6,october,cloudy,64,99
+7,april,clear,0,37
+7,april,partly cloudy,38,70
+7,april,cloudy,71,99
+7,may,clear,0,43
+7,may,partly cloudy,44,80
+7,may,cloudy,81,99
+7,june,clear,0,50
+7,june,partly cloudy,51,83
+7,june,cloudy,84,99
+7,july,clear,0,57
+7,july,partly cloudy,58,93
+7,july,cloudy,94,99
+7,august,clear,0,50
+7,august,partly cloudy,51,90
+7,august,cloudy,91,99
+7,september,clear,0,53
+7,september,partly cloudy,54,87
+7,september,cloudy,88,99
+7,october,clear,0,47
+7,october,partly cloudy,48,77
+7,october,cloudy,78,99
+8,april,clear,0,11
+8,april,partly cloudy,12,68
+8,april,cloudy,69,99
+8,may,clear,0,9
+8,may,partly cloudy,10,70
+8,may,cloudy,71,99
+8,june,clear,0,11
+8,june,partly cloudy,12,78
+8,june,cloudy,79,99
+8,july,clear,0,16
+8,july,partly cloudy,17,81
+8,july,cloudy,82,99
+8,august,clear,0,19
+8,august,partly cloudy,20,83
+8,august,cloudy,84,99
+8,september,clear,0,17
+8,september,partly cloudy,18,76
+8,september,cloudy,77,99
+8,october,clear,0,16
+8,october,partly cloudy,17,74
+8,october,cloudy,75,99
+9,april,clear,0,34
+9,april,partly cloudy,35,69
+9,april,cloudy,70,99
+9,may,clear,0,39
+9,may,partly cloudy,40,79
+9,may,cloudy,80,99
+9,june,clear,0,49
+9,june,partly cloudy,50,74
+9,june,cloudy,75,99
+9,july,clear,0,64
+9,july,partly cloudy,65,84
+9,july,cloudy,85,99
+9,august,clear,0,49
+9,august,partly cloudy,50,74
+9,august,cloudy,75,99
+9,september,clear,0,34
+9,september,partly cloudy,35,69
+9,september,cloudy,70,99
+9,october,clear,0,34
+9,october,partly cloudy,35,69
+9,october,cloudy,70,99
+10,april,clear,0,40
+10,april,partly cloudy,41,74
+10,april,cloudy,75,99
+10,may,clear,0,36
+10,may,partly cloudy,37,77
+10,may,cloudy,78,99
+10,june,clear,0,47
+10,june,partly cloudy,48,80
+10,june,cloudy,81,99
+10,july,clear,0,70
+10,july,partly cloudy,71,96
+10,july,cloudy,97,99
+10,august,clear,0,73
+10,august,partly cloudy,74,96
+10,august,cloudy,97,99
+10,september,clear,0,60
+10,september,partly cloudy,61,90
+10,september,cloudy,91,99
+10,october,clear,0,53
+10,october,partly cloudy,54,83
+10,october,cloudy,84,99
+11,april,clear,0,27
+11,april,partly cloudy,28,53
+11,april,cloudy,54,99
+11,may,clear,0,27
+11,may,partly cloudy,28,63
+11,may,cloudy,64,99
+11,june,clear,0,37
+11,june,partly cloudy,38,77
+11,june,cloudy,78,99
+11,july,clear,0,50
+11,july,partly cloudy,51,83
+11,july,cloudy,84,99
+11,august,clear,0,50
+11,august,partly cloudy,51,83
+11,august,cloudy,84,99
+11,september,clear,0,43
+11,september,partly cloudy,44,73
+11,september,cloudy,74,99
+11,october,clear,0,47
+11,october,partly cloudy,48,70
+11,october,cloudy,71,99
