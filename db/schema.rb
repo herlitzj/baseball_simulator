@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425181831) do
+ActiveRecord::Schema.define(version: 20150426224518) do
 
   create_table "defenses", force: :cascade do |t|
     t.integer  "player_id"
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20150425181831) do
     t.string   "precipitation"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "lineups", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "team_id"
+    t.integer  "player_id"
+    t.string   "position"
+    t.float    "inning_in"
+    t.float    "inning_out"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
