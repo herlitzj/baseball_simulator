@@ -50,5 +50,26 @@
   <%= @game.precipitation %>
 </p>
 
+<h3>Home Team</h3>
+<p>1st Base: <%= Player.find(@home_lineup.find_by_position("1b").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("1b").player_id).last_name %></p>
+<p>2nd Base: <%= Player.find(@home_lineup.find_by_position("2b").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("2b").player_id).last_name %></p>
+<p>3rd Base: <%= Player.find(@home_lineup.find_by_position("3b").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("3b").player_id).last_name %></p>
+<p>Short Stop: <%= Player.find(@home_lineup.find_by_position("ss").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("ss").player_id).last_name %></p>
+<p>Left Field: <%= Player.find(@home_lineup.find_by_position("lf").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("lf").player_id).last_name %></p>
+<p>Right Field: <%= Player.find(@home_lineup.find_by_position("rf").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("rf").player_id).last_name %></p>
+<p>Center Field: <%= Player.find(@home_lineup.find_by_position("rf").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("cf").player_id).last_name %></p>
+<p>Pitcher: <%= Player.find(@home_lineup.find_by_position("p").player_id).first_name %> <%= Player.find(@home_lineup.find_by_position("p").player_id).last_name %></p>
+
+
+<h3>Away Team</h3>
+<p>1st Base: <%= Player.find(@away_lineup.find_by_position("1b").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("1b").player_id).last_name %></p>
+<p>2nd Base: <%= Player.find(@away_lineup.find_by_position("2b").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("2b").player_id).last_name %></p>
+<p>3rd Base: <%= Player.find(@away_lineup.find_by_position("3b").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("3b").player_id).last_name %></p>
+<p>Short Stop: <%= Player.find(@away_lineup.find_by_position("ss").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("ss").player_id).last_name %></p>
+<p>Left Field: <%= Player.find(@away_lineup.find_by_position("lf").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("lf").player_id).last_name %></p>
+<p>Right Field: <%= Player.find(@away_lineup.find_by_position("rf").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("rf").player_id).last_name %></p>
+<p>Center Field: <%= Player.find(@away_lineup.find_by_position("cf").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("cf").player_id).last_name %></p>
+<p>Pitcher: <%= Player.find(@away_lineup.find_by_position("p").player_id).first_name %> <%= Player.find(@away_lineup.find_by_position("p").player_id).last_name %></p>
+
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

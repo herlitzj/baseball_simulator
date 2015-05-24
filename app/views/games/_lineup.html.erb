@@ -1,0 +1,10 @@
+<p>test</p>
+<%= form_for(@game) do |f| %>
+
+    <%= f.fields_for :lineups do |lineup| %>
+        <%= lineup.label :player_id %><%= lineup.text_field :player_id %>
+        <%= lineup.label :position %><%= lineup.text_field :position %>
+        <%= lineup.label :team_id %><%= lineup.text_field :team_id %>
+    <% end %>
+
+<% end %>

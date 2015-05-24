@@ -1,6 +1,8 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
+  
+
   # GET /games
   # GET /games.json
   def index
@@ -10,6 +12,8 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @home_lineup = Lineup.where("game_id = ? AND team_id =?", @game.id, @game.home_team)
+    @away_lineup = Lineup.where("game_id = ? AND team_id =?", @game.id, @game.away_team)
   end
 
   # GET /games/new
@@ -19,12 +23,40 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+    @home_lineup = Lineup.where("game_id = ? AND team_id =?", @game.id, @game.home_team)
+    @away_lineup = Lineup.where("game_id = ? AND team_id =?", @game.id, @game.away_team)
   end
 
   # POST /games
   # POST /games.json
   def create
     @game = Game.new(game_params)
+
+  @position = ["1b", "2b", "3b", "ss", "c", "lf", "cf", "rf"]
+  @home_players = Player.where("team_id = ?", @game.home_team)
+  @away_players = Player.where("team_id = ?", @game.away_team)
+  @home_defenses = Defense.where("player_id >= ? AND player_id <= ?", @home_players.first.id, @home_players.last.id)
+  @away_defenses = Defense.where("player_id >= ? AND player_id <= ?", @away_players.first.id, @away_players.last.id)
+
+
+    # generate initial lineups
+    @position.each { |position| @game.lineups.build player_id: @home_defenses.find_by_position(position).player_id,
+                                                    position: position,
+                                                    team_id: @game.home_team,
+                                                    inning_in: 1}
+    @game.lineups.build player_id: Player.find_by("team_id = ? AND player_type = ?", @game.home_team, "pitcher").id,
+                        position: "p",
+                        team_id: @game.home_team,
+                        inning_in: 1
+    @position.each { |position| @game.lineups.build player_id: @away_defenses.find_by_position(position).player_id,
+                                                    position: position,
+                                                    team_id: @game.away_team,
+                                                    inning_in: 1}
+    @game.lineups.build player_id: Player.find_by("team_id = ? AND player_type = ?", @game.away_team, "pitcher").id,
+                        position: "p",
+                        team_id: @game.away_team,
+                        inning_in: 1
+
     # set location and stadium based on Home Team
     @game.stadium = Stadium.find(@game.home_team).id
     @game.location = Stadium.find(@game.home_team).location_id
